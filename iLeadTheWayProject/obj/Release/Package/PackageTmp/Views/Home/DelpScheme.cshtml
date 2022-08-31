@@ -1,0 +1,416 @@
+﻿@using EntityProject
+@using iLeadTheWayProject.HelperClass
+
+@{
+    Layout = null;
+    var data = ViewData["State"];
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ILedTheWay - Join the movement today | Delp Scheme</title>
+    <!-- Bootstrap -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Website Styling-->
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+<body>
+    <div class="loader"></div>
+    <div class="row toggle-light-box" id="panel">
+        <div class="form_wrapper">
+            <div class="close-btn-wrap hidden-lg hidden-md hidden-sm"><i class="fa fa-times"></i></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-11 center-block pull-none">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="pre_reg">
+                                    fill in the form to pre-register!
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="reg_text">
+                                    <p>Don't miss out on the special offer! Pre-register today to be informed when you can take advantage of the DELP Dashboard in your state.</p>
+                                    <p>You can  check the <a class="col_fff" href="http://delp.in/" target="_blank"> DELP Dashboard </a>to see which states and cities are already availing of this offer.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <form method="POST" class="form_inner_wrap">
+                                <div class="col-xs-12 col-lg-9">
+                                    <div class="col-xs-6 col-lg-4">
+                                        <div class="form-group form_input form-left">
+                                            <input type="text" id="FirstName1" class="form-control" required="" onkeypress="return ValidateAlpha(event);" placeholder="First Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-lg-4">
+                                        <div class="form-group form_input form-left">
+                                            <input type="text" id="LastName1" class="form-control" required="" onkeypress="return ValidateAlpha(event);" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-lg-4">
+                                        <div class="form-group form_input form-left">
+                                            <input type="email" id="EmailId1" class="form-control" required="" placeholder="Email ID">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-lg-4">
+                                        <div class="form-group form_input form-left">
+                                            <input type="text" maxlength="10" id="MobileNumber1" required="" class="form-control" placeholder="Mobile">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-lg-4">
+                                        <div class="form-group form_input form-left drp-bg">
+                                            <select id="State" required="" class="form-control">
+                                                <option value="0">Select State....</option>
+                                                @foreach (var item in (List<State>)data)
+                                                {
+                                                    <option value="@item.StateId">@item.StateName</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-lg-4">
+                                        <div class="form-group form_input form-left drp-bg">
+                                            <select id="City" name="City" required="" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-lg-3">
+                                    <div class="form-group form_input btn-wrapper">
+                                        <button type="button" id="btnR" name="btnR" class="btn btn-default">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="flip" class="pre_reg_btn">PRE-REGISTER</div>
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas hidden-lg hidden-md  hidden-sm" id="sidebar">
+            <div class="mob_menu">
+                <ul>
+                    <li><a  href="@Url.Action("Home", "Home")"> HOME</a></li>
+                    @*<li><a href="@Url.Action("DelpScheme", "Home")">DELP SCHEME</a></li>*@
+                    <li><a class="active" href="@Helper.ToAbsoluteUrl("~/delp-scheme")">DELP SCHEME</a></li>
+                    <li><a href="http://delp.in/" target="_blank">DELP DASHBOARD</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--/.sidebar-offcanvas-->
+        <div class="row">
+            <div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+                <div class="mob_header">
+                    <span class="mob-logo pull-left col-xs-8">
+                        <a href="@Url.Action("Home", "Home")"><img src="~/img/iledtheway_Facts.png" class="img-responsive"></a>
+                    </span>
+                    <span class="col-xs-4 pull-right visible-xs text-right">
+                        <button type="button" class="btn btn-xs" data-toggle="offcanvas">
+                            <img src="~/img/ofcanvas-btn.png" class="img-responsive off-canavas-img">
+                        </button>
+                    </span>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="header hidden-xs">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="logo">
+                            <a href="@Url.Action("Home", "Home")"> <img src="~/img/iledtheway_Facts.png" class="img-responsive"></a>
+</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="menu text-right">
+                            <ul>
+                                <li><a href="@Url.Action("Home", "Home")">HOME</a></li>
+                                @*<li><a class="active" href="@Url.Action("DelpScheme", "Home")">DELP SCHEME</a></li>*@
+                                <li><a class="active" href="@Helper.ToAbsoluteUrl("~/delp-scheme")">DELP SCHEME</a></li>
+                                <li><a href="http://delp.in/" target="_blank">DELP DASHBOARD</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="savemoney_banner">
+                         <img src="~/img/savemoney.jpg" class="img-responsive">
+                        <div class="savemoney_banner_text">
+                            <div class="big_caption">
+                                save money, twice!
+                            </div>
+                            <div class="small_text">
+                                switch to led bulbs. make india more energy efficient.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="bluepatch">
+                        <span class="bold">SAVE NOW:</span> Get LED bulbs for <i class="fa fa-inr"></i> 100 or <i class="fa fa-inr"></i> 105, not <i class="fa fa-inr"></i> 400! <span class="bold">75% savings!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="img_section">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="text-center">
+                            <div class="savemoney_mid_img">
+                                <a href="#"><img src="~/img/wallet.png" class="img-margin img-responsive "></a>
+                            </div>
+
+                            <div class="img_head">SAVE ANNUALLY</div>
+                            <div class="img-cont">Save <i class="fa fa-inr"></i> 160 in electricity<span class="clearfix"></span> bills per bulb</div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 ">
+                        <img src="~/img/verticalline.png" class="hidden-xs" />
+                        <div class="text-center visible-xs">
+                            <img class="horizontal_img" src="~/img/horizontal-line.png">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <div class="text-center">
+                            <div class="savemoney_mid_img">
+                                <a href="#"><img src="~/img/bulb.png" class="img-margin img-responsive"></a>
+                            </div>
+                            <div class="img_head">ONE TIME OFFER </div>
+                            <div class="img-cont">Buy 2-10 LED bulbs at lower than CFL rates</div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 text-right">
+                        <img src="~/img/verticalline.png" class="hidden-xs" />
+                        <div class="text-center visible-xs">
+                            <img class="horizontal_img" src="~/img/horizontal-line.png">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="text-center">
+                            <div class="savemoney_mid_img">
+                                <a href="#"><img src="~/img/warranty.png" class="img-margin img-responsive "></a>
+                            </div>
+                            <div class="img_head">SPECIAL WARRANTY</div>
+                            <div class="img-cont">3-year free-of-cost<span class="clearfix"></span> replacement </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="row" id="accLoad">
+            </div>
+            <div class="orange_patch_join hide">
+                <div class="add-head ">JOIN A MOVEMENT TO MAKE INDIA BRIGHTER & SMARTER!</div>
+                <div class="add-content ">
+                    Take advantage of the DELP  (Domestic Energy Lighting Program)  Scheme by EESL,
+                    a Government of India enterprise,for a special offer for your home.
+                    Tell others you switched to a smarter lighting solution and say I led the way!
+                </div>
+            </div>
+        </div>
+        <div class="footer_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-5 col-sm-4 col-md-4">
+                        <div class="footer_left">
+                            <img class="img-responsive" src="~/img/footer_left_logo.png">
+                        </div>
+                    </div>
+                    <div class="col-xs-2 col-sm-4 col-md-4">
+                        <div class="footer-center-img">
+                            @*<img src="/Beta/img/eesl-delp.png" class="img-responsive bulb-img-ft">*@
+                            <img src="/img/eesl-delp.png" class="img-responsive bulb-img-ft">
+
+                        </div>
+                    </div>
+                    <div class="col-xs-5 col-sm-4 col-md-4">
+                        <div class="footer_left1 footer-img1">
+                            <img class="img-responsive" src="~/img/footer_right_logo.png">
+                        </div>
+                        <div class="footer_left1 footer-img2">
+                            <img class="img-responsive" src="~/img/energy.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="modal-body tanku">
+                    <h4 class="modal-title" id="exampleModalLabel">Thank You!</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js" type="text/javascript"></script>
+    <script src="~/js/bootstrap.js" type="text/javascript"></script>
+    <script src="~/js/bootstrap-select.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#flip").on('click', function () {
+                console.log("Ok");
+                if ($(window).width() > 767) {
+                    $("#panel").slideToggle("slow");
+                } else {
+                    $("#panel").fadeIn("slow");
+                }
+            });
+
+            $(".close-btn-wrap").on('click', function () {
+                $("#panel").fadeOut("slow");
+            });
+        });
+        //Get All  City
+        $("#State").change(function () {
+            var stateId = this.value;
+            $("#City").empty();
+            $('#City').append("<option value='0'>Select City...</option>");
+            if (stateId != 0) {
+                $.ajax({
+                    type: "POST",
+                    //url: "/Beta/Home/GetCity",
+                    url: "/Home/GetCity",
+                    data: JSON.stringify({ stateId: stateId }),
+                    dataType: "text",
+                    contentType: "application/json; charset=utf-8",
+                    processData: false,
+                    success: function (data) {
+                        var yourArray = $.parseJSON(data);
+                        if (yourArray != null) {
+                            for (var i = 0; i < yourArray.length; i++) {
+                                $('#City').append("<option value='" + yourArray[i].CityName + "'>" + yourArray[i].CityName + "</option>");
+                            }
+                            $('#City').append("<option value='Other'>Other</option>");
+                        }
+                    },
+                    error: function (response) {
+                        if (response != 1) {
+                            alert("Error!!!!");
+                            location.reload();
+                        }
+                    }
+                });
+            }
+            else {
+                alert("Please Select Any State Name....");
+            }
+        });
+        //Save Data Database
+        //Save Data Database
+        $('#btnR').click(function () {
+            var emailId = $("#EmailId1").val(); //Value entered in the text box
+           // var email = document.getElementById('EmailId1');
+            var fName = $("#FirstName1").val();
+            var lName = $("#LastName1").val();
+            var mNumber = $("#MobileNumber1").val();
+            var state = $("#State").val();
+            var city = $("#City").val();
+            var filter = /^([A-Za-z0-9_\-\.])+\@@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+             
+            if (emailId != "" && fName != "" && lName != "" && mNumber != "" && state != 0 && city != 0) {
+                if (!filter.test(emailId)) {
+                    alert('Please Enter Valid Email Address');
+                    emailId.focus();
+                    return false;
+                } else {
+                    if (mNumber.length == 10) {
+                        //$.post("/Beta/Home/AddDetail", { EmailId1: emailId, FirstName1: fName, LastName1: lName, MobileNumber1: mNumber, State: state, City: city },
+                        $.post("/Home/AddDetail", { EmailId1: emailId, FirstName1: fName, LastName1: lName, MobileNumber1: mNumber, State: state, City: city },
+                   function (data) {
+                       if (data == 1) {
+                           $('#exampleModal').modal('show');
+                           $("#EmailId1").empty();
+                           $("#FirstName1").empty();
+                           $("#LastName1").empty();
+                           $("#MobileNumber1").empty();
+                           $("#panel").stop().slideToggle("slow");
+                       }
+                       else {
+                           alert("Your details have already been registered.");
+                           $("#panel").stop().slideToggle("slow");
+                       }
+                   });
+                    } else {
+                        alert("Enter Mobile Number Only 10 Digit....");
+                    }
+                }
+                }
+                else {
+                    alert("Please Enter All Data!!!!");
+                }
+            
+        });
+        $(document).ready(function () {
+            $("#MobileNumber1").keydown(function (e) {
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 || (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) || (e.keyCode >= 35 && e.keyCode <= 40)) {
+                    return;
+                }
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
+        });
+        function ValidateAlpha(evt) {
+            var keyCode = (evt.which) ? evt.which : evt.keyCode;
+            if ((keyCode < 65 || keyCode > 90) && (keyCode < 97 || keyCode > 123) && keyCode != 32 && keyCode != 8)
+                return false;
+            return true;
+        }
+        $(document).ready(function () {
+            $('[data-toggle="offcanvas"]').click(function () {
+                $('.row-offcanvas').toggleClass('active');
+            });
+            $("#accLoad").load("../test.html");
+            //$("#accLoad").load("../Beta/test.html");
+        });
+
+        function validateEmail(emailField) {
+            var reg = /^([A-Za-z0-9_\-\.])+\@@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            if (reg.test(emailField.value) == false) {
+                alert('Invalid Email Address');
+                return false;
+            }
+            return true;
+        }
+        $(window).load(function () {
+            //Page loader
+            $(".loader").fadeOut(500);
+        });
+    </script>
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-69363214-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>   

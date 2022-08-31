@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=CKEDITOR/@EntryIndexedValue">ckeditor</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/MappedPaths/=SCRIPTS_005CTINYMCE_005CCSS_005CCONTENT_002ECSS/@EntryIndexedValue"></s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/MappedPaths/=SCRIPTS_005CTINYMCE_005CTINYMCE_002EMIN_002EJS/@EntryIndexedValue"></s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/MappedPaths/=VIEWS_005CSHARED_005CIMG_005CSLIDE_005FIMG_002EJPG_0020/@EntryIndexedValue"></s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=CKEDITOR/@EntryIndexedValue">ckeditor</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=SCRIPTS_005CTINYMCE_005CCSS_005CCONTENT_002ECSS/@EntryIndexedValue">Scripts\tinymce\css\content.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=SCRIPTS_005CTINYMCE_005CTINYMCE_002EMIN_002EJS/@EntryIndexedValue">Scripts\tinymce\tinymce.min.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=VIEWS_005CSHARED_005CIMG_005CSLIDE_005FIMG_002EJPG_0020/@EntryIndexedValue">Views\Shared\img\slide_img.jpg </s:String></wpf:ResourceDictionary>

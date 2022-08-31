@@ -1,0 +1,24 @@
+﻿@{
+    //ViewBag.Title = "TwittesView";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    var data = ViewData["TwitterData"] as EntityProject.TwitterData;
+}
+@model EntityProject.TwitterData
+<div class="col-lg-12">
+    <h1></h1>
+</div>
+<div class="col-lg-12">
+    <div class="col-md-offset-2 col-lg-8">
+        <img src="@data.ProfileImageUrl" style="height:100px;width: 100px; " class="img-thumbnail" />&nbsp;&nbsp;<label id="lblname">@data.UserName</label><a href="https://twitter.com/@data.ScreenName"> @@@data.ScreenName</a>
+    </div>
+    <div class="col-md-offset-2 col-md-6">
+        <label id="lbltext">@data.Text</label>
+    </div>
+    <hr />
+    <div class="col-md-offset-2 col-lg-4">
+        <a href="@data.ReplyaUrlId" target="_blank">Reply</a>&nbsp;&nbsp;&nbsp;<a href="@data.RetweetUrlId" target="_blank">Retweet</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="@data.FavoriteUrlId" target="_blank">Fav</a>
+    </div>
+    <div class="col-md-offset-1 col-lg-3">
+        <b id="78">@data.FavouritesCount</b> Favourites &nbsp;&nbsp;&nbsp;<b id="76">@data.RetweetCount</b> Retweet
+    </div>
+</div>

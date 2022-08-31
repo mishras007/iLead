@@ -1,0 +1,64 @@
+﻿@{
+    //ViewBag.Title = "Viewuser";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    @model EntityProject.AdminDetail
+}
+
+<div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong class="text-center">User Detail</strong>
+        </div>
+        <div class="panel-body form-horizontal ">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Regi Number:</label>
+                <div class="col-sm-8">
+                    @Html.DisplayFor(model => model.AdminDetailId)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Name:</label>
+                <div class="col-sm-8">
+                    @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">User Name:</label>
+                <div class="col-sm-8">
+                    @Html.DisplayFor(model => model.UserName)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Email Address:</label>
+                <div class="col-sm-8">
+                    @Html.DisplayFor(model => model.EmailId)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Mobile Number:</label>
+                <div class="col-sm-8">
+                    @Html.DisplayFor(model => model.MobileNumber)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Gender:</label>
+                <div class="col-sm-8">
+                    @Html.DisplayFor(model => model.Gender)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Created Date:</label>
+                <div class="col-sm-8">
+                    @Html.DisplayFor(model => model.CreateDate)
+                </div>
+            </div>
+            <div class="form-group last">
+                <div class="col-sm-offset-4 col-sm-8">
+                    @Html.ActionLink("Edit", "EditUser", new { id = Model.AdminDetailId }, new { @class = "btn-success btn-lg" })
+                    &nbsp; &nbsp;&nbsp;
+                    @Html.ActionLink("Back To List", "Index")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

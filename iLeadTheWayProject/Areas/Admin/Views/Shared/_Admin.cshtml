@@ -1,0 +1,626 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iLedTheWay-Admin Layout</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="~/Areas/Admin/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/js/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/css/style.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/assets/css/main-style.css" rel="stylesheet" />
+    <link href="~/css/Datepicker.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">*@
+   
+</head>
+<body>
+    <!--  wrapper -->
+    <div id="wrapper">
+        <!-- navbar top -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <!-- navbar-header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">
+                    @*<img src="~/assets/img/logo.png" alt="" />*@
+                    <h2 style="color:white ">iLedTheWay</h2>
+                </a>
+            </div>
+            <!-- end navbar-header -->
+            <!-- navbar-top-links -->
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- main dropdown -->
+                <li class="dropdown"></li>
+                <li class="dropdown"></li>
+                <li class="dropdown"></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <h4> <i class="fa fa-user">@Session["UserName"]</i></h4>
+                    </a>
+                    <!-- dropdown user-->
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="@Url.Action("Viewuser", "Admin", new { id = Session["UserId"] })"><i class="fa fa-user fa-fw"></i>User Profile</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("ResetPasswordForUser", "Admin" )"><i class="fa fa-gear fa-fw"></i>Reset Password</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="@Url.Action("LogOut", "Admin" )"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        </li>
+                    </ul>
+                    <!-- end dropdown-user -->
+                </li>
+                <li>
+                    <a href="@Url.Action("LogOut", "Admin" )"><i class="fa fa-sign-out fa-fw"></i></a>
+                </li>
+                <!-- end main dropdown -->
+            </ul>
+            <!-- end navbar-top-links -->
+        </nav>
+        <!-- end navbar top -->
+        <!-- navbar side -->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <!-- sidebar-collapse -->
+            <div class="sidebar-collapse">
+                <!-- side-menu -->
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <!-- user image section-->
+                        <div class="user-section">
+                            <div class="user-info">
+                                <div>@Session["UserFirstName"] <strong>@Session["UserLastName"]</strong></div>
+                            </div>
+                        </div>
+                        <!--end user image section-->
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Index", "Admin" )"><i class="fa fa-dashboard fa-fw"></i>Admin Detail</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("GetTwitterData", "Admin" )"><i class="fa fa-twitter fa-fw"></i>Twitter</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("GetYouTube", "Admin")"><i class="fa fa-youtube fa-fw"></i>Youtube</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("ViewBlog", "Admin")"><i class="fa fa-edit fa-fw"></i>FACTS</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("RegisterUser", "Admin")"><i class="fa fa-users fa-fw"></i>Pre-Register User </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("GetIpAddress", "Admin")"><i class="fa fa-inbox fa-fw"></i>Take Pledges Ip Address</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("FatchTwitterDataDatewise", "Admin")"><i class="fa fa-twitter fa-fw"></i>Fatch Tweets Date wise</a>
+                    </li>
+                </ul>
+                <!-- end side-menu -->
+            </div>
+            <!-- end sidebar-collapse -->
+        </nav>
+        <!-- end navbar side -->
+        <!--  page-wrapper -->
+        <div id="page-wrapper">
+            <div class="row">
+                <!-- Page Header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header">Dashboard</h1>@Html.ActionLink("Update Json Data", "UpdateJsonData", "Admin", null, new { @class = "btn btn-primary" })
+                    @RenderBody()
+                </div>
+                <!--End Page Header -->
+            </div>
+        </div>
+        <!-- end page-wrapper -->
+    </div>
+    <!-- end wrapper -->
+    <script src="~/Areas/Admin/assets/js/jquery-1.10.2.js"></script>
+    <script src="~/Areas/Admin/assets/js/JavaScript1.js"></script>
+    <script src="~/Areas/Admin/assets/scripts/siminta.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/Areas/Admin/assets/scripts/siminta.js"></script>
+    <script src="~/Areas/Admin/assets/plugins/pace/pace.js"></script>
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="~/Areas/Admin/assets/js/bootstrap.js"></script>
+    <script src="~/Areas/Admin/assets/js/bootstrap.min.js"></script>
+    <script src="~/Areas/Admin/assets/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/DatePicker.js"></script>
+    
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>*@
+
+    <script type="text/javascript">
+        //UserDetail DataTable
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "order": [[0, "desc"]]
+            });
+        });
+        //YouTube DataTable
+        $(document).ready(function () {
+            $('#youtubeItem').DataTable({
+                "order": [[0, "desc"]]
+            });
+        });
+        //Twitter DataTable
+        $(document).ready(function () {
+            $('#TwitterTable').DataTable({
+                "order": [[0, "desc"]],
+                "iDisplayLength": 25
+            });
+        });
+        //Twitter DataTableApproval
+        $(document).ready(function () {
+            $('#TwitterTableAppr').DataTable({
+                "order": [[0, "desc"]],
+                "iDisplayLength": 25
+            });
+        });
+        //Twitter DataTableUnApproval
+        $(document).ready(function () {
+            $('#TwitterTableUnApp').DataTable({
+                "order": [[0, "desc"]],
+                "iDisplayLength": 25
+            });
+        });
+        //Detail Of Blog Post
+        $(document).ready(function () {
+            $('#BlogPost').DataTable({
+                "order": [[0, "desc"]]
+            });
+        });
+        //Register User  DataTable
+        $(document).ready(function () {
+            $('#RegisterUser').DataTable({
+                "order": [[0, "desc"]]
+            });
+        });
+        //IpDetail
+        $(document).ready(function () {
+            $('#IpAddressTable').DataTable({
+                "order": [[0, "desc"]],
+                "iDisplayLength": 25
+            });
+        });
+        //You Tube Data Update IsValid
+        $('#chckYou').click(function () {
+            if (this.checked == false) {
+                $('.chcktbl1:checked').attr('checked', false);
+                $("#lbltext1").empty();
+                $("#lbltext1").append(" Check All");
+            }
+            else {
+                $('.chcktbl1:not(:checked)').attr('checked', true);
+                $("#lbltext1").empty();
+                $("#lbltext1").append("  Uncheck All");
+            }
+        });
+        $('#chckYou').click(function () {
+        });
+        $("#btnupdate1").click(function () {
+            var youTubeId1 = [];
+            var youTubeId = [];
+            $.each($("input[name='chcktbl1']:checked"), function () {
+                youTubeId.push($(this).val());
+            });
+            $.each($("input[name='chcktbl1']:not(:checked)"), function () {
+                youTubeId1.push($(this).val());
+            });
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("UpdateIsValidYouTube", "Admin")',               
+                data: JSON.stringify({ YouTubeId: youTubeId, YouTubeId1: youTubeId1 }),
+                dataType: "text",
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                success: function (response) {
+                    if (response != 0) {
+                        alert("Data Update Successfully!!!!");
+                        location.reload();
+                    }
+                },
+                error: function (response) {
+                    if (response != 1) {
+                        alert("Error!!!!");
+                        location.reload();
+                    }
+                }
+            });
+
+        });
+        //Blog Data Update For IsValid
+        $('#CheckBlog').click(function () {
+            if (this.checked == false) {
+                $('.CheckBlogtbl:checked').attr('checked', false);
+                $("#lblCheckBlog").empty();
+                $("#lblCheckBlog").append(" Check All");
+            }
+            else {
+                $('.CheckBlogtbl:not(:checked)').attr('checked', true);
+                $("#lblCheckBlog").empty();
+                $("#lblCheckBlog").append("  Uncheck All");
+            }
+        });
+        $('#CheckBlog').click(function () {
+        });
+        $("#btnUpdateBlog").click(function () {
+            var blogData1 = new Array();
+            var blogData = new Array();
+            $.each($("input[name='CheckBlogtbl']:checked"), function () {
+                blogData.push($(this).val());
+            });
+            $.each($("input[name='CheckBlogtbl']:not(:checked)"), function () {
+                blogData1.push($(this).val());
+            });
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("UpdateBlogIsValid", "Admin")',               
+                data: JSON.stringify({ blogData: blogData, blogData1: blogData1 }),
+                dataType: "text",
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                success: function (response) {
+                    if (response != 0) {
+                        alert("Data Update Successfully!!!!");
+                        location.reload();
+                    }
+                },
+                error: function (response) {
+                    if (response != 1) {
+                        alert("Error!!!!");
+                        location.reload();
+                    }
+                }
+            });
+
+        });
+
+        //Checking Password Match Or Not
+        $('#Password').on('keyup', function () {
+            if ($(this).val() == $('#testPassword').val()) {
+                $('#message').html('Password Match').css('color', 'green');
+            }
+            else
+                $('#message').html('Password Do Not Match').css('color', 'red');
+        });
+
+        var pass = $('#Password').val();
+        $('#testPassword').on('keyup', function () {
+            if ($(this).val() != '') {
+                if ($('#Password').val() != '') {
+                    if ($(this).val() == $('#Password').val()) {
+                        $('#message').html('Password Match').css('color', 'green');
+                    }
+                    else
+                        $('#message').html('Password Do Not Match').css('color', 'red');
+                }
+            }
+            else
+                $('#message').html('Please Do Not Blank Password Fild').css('color', 'red');
+        });
+
+        //User Name Exixt Or Not Database
+        $('#UserName').on('focusout', function () {
+            var name = $("#UserName").val(); //Value entered in the text box
+            var status = $("#divStatus"); //DIV object to display the status message
+            status.html("Checking....").css('color', 'black'); //While our Thread works, we will show some message to indicate the progress
+            if (name != "") {
+                $.post("/Admin/Admin/CheckName", { UserName: name },
+                    function (data) {
+                        if (data == 1) {
+                            status.html(name + " User Name Is Currect...Thank You").css('color', 'green');
+                        }
+                        else {
+                            status.html(name + "wrong User Name").css('color', 'red');
+                        }
+                    });
+            }
+            else {
+                status.html("");
+            }
+        });
+
+        //IP Address Block
+        $('#chckIpAddrss').click(function () {
+        });
+        $("#btnupdateip").click(function () {
+            var uncheckipData1 = new Array();
+            var ckeckipData = new Array();
+            $.each($("input[name='chcktblipAddress']:checked"), function () {
+                ckeckipData.push($(this).val());
+            });
+            $.each($("input[name='chcktblipAddress']:not(:checked)"), function () {
+                uncheckipData1.push($(this).val());
+            });
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("BlocIpAddress", "Admin")',               
+                data: JSON.stringify({ ckeckipData: ckeckipData, uncheckipData1: uncheckipData1 }),
+                dataType: "text",
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                success: function (response) {
+                    if (response != 0) {
+                        alert("Data Update Successfully!!!!");
+                        location.reload();
+                    }
+                },
+                error: function (response) {
+                    if (response != 1) {
+                        alert("Error!!!!");
+                        location.reload();
+                    }
+                }
+            });
+
+        });
+        $("#btnipuncheck").click(function () {
+            var uncheckipData1 = new Array();
+            $.each($("input[name='chcktblipAddress']:not(:checked)"), function () {
+                uncheckipData1.push($(this).val());
+            });
+
+            $.ajax({
+                type: "POST",             
+                url: '@Url.Action("UnBlockIpAddress", "Admin")',
+                data: JSON.stringify({ uncheckipData1: uncheckipData1 }),
+                dataType: "text",
+                contentType: "application/json; charset=utf-8",
+                processData: false,
+                success: function (response) {
+                    if (response != 0) {
+                        alert("Data Update Successfully!!!!");
+                        location.reload();
+                    }
+                },
+                error: function (response) {
+                    if (response != 1) {
+                        alert("Error!!!!");
+                        location.reload();
+                    }
+                }
+            });
+
+        });
+
+        //Twitter Data Update For IsValid Two Conditon
+        $('#chckTwitter').click(function () {
+            if (this.checked == false) {
+                $('.chcktblTwitter:checked').attr('checked', false);
+                $("#lbltext12").empty();
+                $("#lbltext12").append(" Check All");
+            }
+            else {
+                $('.chcktblTwitter:not(:checked)').attr('checked', true);
+                $("#lbltext12").empty();
+                $("#lbltext12").append("  Uncheck All");
+            }
+        });
+        $('#chckTwitter').click(function () {
+        });
+        //Approve
+        $("#btnApprove").click(function () {
+            var twitterData = new Array();
+            $.each($("input[name='chcktblTwitter']:checked"), function () {
+                twitterData.push($(this).val());
+            });
+            if (twitterData.length != null) {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("ApprovalTwitterStatus", "Admin")',
+                    data: JSON.stringify({ twitterData: twitterData }),
+                    dataType: "text",
+                    contentType: "application/json; charset=utf-8",
+                    processData: false,
+                    success: function (response) {
+                        if (response != 0) {
+                            alert("Data Update Successfully!!!!");
+                            $('.chcktblTwitter:checked').attr('checked', false);
+                            location.reload();
+                        }
+                    },
+                    error: function (response) {
+                        if (response != 1) {
+                            alert("Error!!!!");
+                            location.reload();
+                        }
+                    }
+                });
+            } else {
+                alert("Please Selecte Any Option...");
+            }
+        });
+        //Reject
+        $("#btnReject").click(function () {
+            var twitterData1 = new Array();
+            $.each($("input[name='chcktblTwitter']:checked"), function () {
+                twitterData1.push($(this).val());
+            });
+            if (twitterData1.length != null) {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("UnApprovalTwitterStatus", "Admin")',
+                    data: JSON.stringify({ twitterData1: twitterData1 }),
+                    dataType: "text",
+                    contentType: "application/json; charset=utf-8",
+                    processData: false,
+                    success: function (response) {
+                        if (response != 0) {
+                            alert("Data Update Successfully!!!!");
+                            $('.chcktblTwitter:checked').attr('checked', false);
+                            location.reload();
+                        }
+                    },
+                    error: function (response) {
+                        if (response != 1) {
+                            alert("Error!!!!");
+                            location.reload();
+                        }
+                    }
+                });
+            } else {
+                alert("Please Select Any Option....");
+            }
+        });
+        //Twitter Data Update For IsValid Approvel
+        $('#chckTwitterunapp').click(function () {
+            if (this.checked == false) {
+                $('.chcktblTwitteruna:checked').attr('checked', false);
+                $("#lbltext12").empty();
+                $("#lbltext12").append(" Check All");
+            }
+            else {
+                $('.chcktblTwitteruna:not(:checked)').attr('checked', true);
+                $("#lbltext12").empty();
+                $("#lbltext12").append("  Uncheck All");
+            }
+        });
+        $('#chckTwitterunapp').click(function () {
+        });
+        //Approve
+        $("#btnApprove12").click(function () {
+            var twitterDataApp = new Array();
+            $.each($("input[name='chcktblTwitteruna']:checked"), function () {
+                twitterDataApp.push($(this).val());
+            });
+            if (twitterDataApp.length != null) {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("ApprovalTwitterStatus", "Admin")',
+                    data: JSON.stringify({ twitterData: twitterDataApp }),
+                    dataType: "text",
+                    contentType: "application/json; charset=utf-8",
+                    processData: false,
+                    success: function(response) {
+                        if (response != 0) {
+                            alert("Data Update Successfully!!!!");
+                            $('.chcktblTwitteruna:checked').attr('checked', false);
+                            location.reload();
+                        }
+                    },
+                    error: function(response) {
+                        if (response != 1) {
+                            alert("Error!!!!");
+                            location.reload();
+                        }
+                    }
+                });
+            } else {
+                alert("Please Select Any Options....");
+            }
+        });
+        //Twitter Data Update For IsValid Reject
+        $('#chckTwitterAppro').click(function () {
+            if (this.checked == false) {
+                $('.chcktblTwitterApp:checked').attr('checked', false);
+                $("#lbltext30").empty();
+                $("#lbltext30").append(" Check All");
+            }
+            else {
+                $('.chcktblTwitterApp:not(:checked)').attr('checked', true);
+                $("#lbltext30").empty();
+                $("#lbltext30").append("  Uncheck All");
+            }
+        });
+        $('#chckTwitterAppro').click(function () {
+        });
+
+        //Reject
+        $("#btnReject12").click(function () {
+            var twitterDataReject = new Array();
+            $.each($("input[name='chcktblTwitterApp']:checked"), function () {
+                twitterDataReject.push($(this).val());
+            });
+            if (twitterDataReject.length != null) {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("UnApprovalTwitterStatus", "Admin")',
+                    data: JSON.stringify({ twitterData1: twitterDataReject }),
+                    dataType: "text",
+                    contentType: "application/json; charset=utf-8",
+                    processData: false,
+                    success: function(response) {
+                        if (response != 0) {
+                            alert("Data Update Successfully!!!!");
+                            $('.chcktblTwitterApp:checked').attr('checked', false);
+                            location.reload();
+                        }
+                    },
+                    error: function(response) {
+                        if (response != 1) {
+                            alert("Error!!!!");
+                            location.reload();
+                        }
+                    }
+                });
+            } else {
+                alert("Please Select Any Options....");
+            }
+        });//
+
+        
+    </script>
+    <script type="text/javascript">
+        var _URL = window.URL || window.webkitURL;
+        $("#file").change(function (e) {
+            var file, img;
+            if ((file = this.files[0])) {
+                img = new Image();
+                img.onload = function () {
+                    var h = this.height;
+                    var w = this.width;
+                    alert(h + " " + w);
+                    if (h <= 150 && w <= 150) {
+                        alert("successfull....");
+                    } else {
+
+                        alert("Please Select Image Only 150*150(height*width)");
+                        // $("#file").clear();
+                        $("#file").val("");
+                        $("#file").replaceWith($("#file").clone(true));
+                    }
+                };
+                img.onerror = function () {
+                    alert("not a valid file: " + file.type);
+                    $("#file").val("");
+                    $("#file").replaceWith($("#file").clone(true));
+                };
+                img.src = _URL.createObjectURL(file);
+
+            }
+            else {
+
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        // When the document is ready
+        $(document).ready(function () {
+
+            $('#d1').datepicker({
+                format: "yyyy-mm-dd"
+            });
+            $('#d2').datepicker({
+                format: "yyyy-mm-dd"
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@{
+    //ViewBag.Title = "Detail Blog";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+
+    var data = ViewData["BlogData"] as EntityProject.BlogPost;
+}
+@model EntityProject.BlogPost
+<div class="col-md-7 col-md-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong class="text-center">Detail Blog</strong>
+        </div>
+        <div class="panel-body form-horizontal ">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">IsSelected:</label>
+                <div class="col-sm-9">
+                    @data.IsSelected
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Posted Date:</label>
+                <div class="col-sm-9">
+                    @data.PostedOn
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Image:</label>
+                <div class="col-sm-9">
+
+                    <img src="@data.ImageUrl" alt="Image Of Blog" height="200" width="200" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Contant:</label>
+                <div class="col-sm-9">
+                    @Html.Raw(data.Content)
+                </div>
+            </div>
+
+            <div class="form-group last">
+                <div class="col-sm-offset-4 col-sm-8">
+                    @Html.ActionLink("Edit", "UpdateBlog", new { id = data.BlogPostId }, new { @class = "btn-success btn-lg" })
+                    &nbsp; &nbsp;&nbsp;
+                    @Html.ActionLink("Back To List", "ViewBlog")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

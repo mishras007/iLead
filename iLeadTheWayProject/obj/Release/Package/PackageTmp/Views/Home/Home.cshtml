@@ -1,0 +1,527 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="treding-tab">
+    <ul>
+        <li>
+            <a href="javascript:;" id="All_Data" class="homepg-tab active-teding-tab active" data-btn-id="all-more" data-text="ALL">ALL</a>
+        </li>
+        <li>
+            <a href="javascript:;" id="All_Video" class="homepg-tab" data-btn-id="video-More" data-text="VIDEOS">VIDEOS</a>
+        </li>
+        <li>
+            <a href="javascript:;" id="All_Tweets" class="homepg-tab" data-btn-id="twitter-More" data-text="TWEETS">TWEETS</a>
+        </li>
+        <li>
+            <a href="javascript:;" id="All_Facts" class="homepg-tab" data-btn-id="fact-More" data-text="FACTS">FACTS</a>
+        </li>
+    </ul>
+    <div class="clearfix"></div>
+</div>
+<div class="treding-tab-content" id="mainDiv">
+    @*<img src="/beta/img/ajax-loader-body.gif" class="tab-load-more" />*@
+    <img src="/img/ajax-loader-body.gif" class="tab-load-more" />
+    <div class="all-show-more" id="All">
+        <div class="row" id="AllFacts">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-sm-12">
+        <div class="load-more-img">
+            @*<img src="/beta/img/ajax-loader-body.gif" />*@
+            <img src="/img/ajax-loader-body.gif" />
+
+        </div>
+        <div class="load-more">
+            <a id="all-more" href="javascript:;" class="load-btn">load more</a>
+            <a id="video-More" href="javascript:;" class="load-btn">load more</a>
+            <a id="twitter-More" href="javascript:;" class="load-btn">load more</a>
+            <a id="fact-More" href="javascript:;" class="load-btn">load more</a>
+        </div>
+    </div>
+</div>
+<div class="modal fade modal-youtube" id="vid_model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content ">
+            <div class="modal-body">
+                <iframe width="100%" id="Vid1" height="375"></iframe>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-left">
+                    <span class="share_txt"> Share</span>
+                    <span class="fb">
+                        <a id="fb-share" class="social-share" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u="> <i class="fa fa-facebook"></i></a>
+                    </span>
+                    <span class="twitt">
+                        <a id="tw-share" class="social-share" target="_blank" href="http://twitter.com/intent/tweet?url=&hashtags=iLedTheWay%20iledtheway.in%20"> <i class="fa fa-twitter"></i></a>
+                    </span>
+                </div>
+                <div class="pull-right">
+                    <button type="button" class="close utube-close" data-dismiss="modal" aria-label="Close">
+                        @*<img src="/Beta/img/fancybox_close.png">*@
+                        <img src="/img/fancybox_close.png">
+
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        /*Curtain js*/
+        $curtainopen = false;     
+
+        $(".social-share").on('click', function () {
+            var getSocialUrl = $(this).attr("href");
+            console.log("" + getSocialUrl);
+            var videoUrl = $("#Vid1").attr('src');
+            console.log("" + videoUrl);
+            var addSrc = getSocialUrl + videoUrl;
+            console.log("" + addSrc);
+            $(this).attr("href", addSrc);
+            setTimeout(function () {
+                $("#fb-share").attr("href", "https://www.facebook.com/sharer/sharer.php?u=");
+                $("#tw-share").attr("href", "http://twitter.com/intent/tweet?url=&hashtags=iLedTheWay%20iledtheway.in%20");
+            }, 10);
+        });
+    });
+</script>
+<script type="text/javascript">
+    var AllVideosCount = 0;
+    var AllTweetsCount = 0;
+    var AllFactsCount = 0;
+    $(document).ready(function () {
+        $(".utube-close").on("click", function () {
+            $("#Vid1").attr("src", "");
+        });
+
+        $("#vid_model").on("click", function () {
+            $("#Vid1").attr("src", "");
+        });
+
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetAllData", "Home")',
+            contentType: "application/json; charset=utf-8",
+            data: { AllcountTweet: AllTweetsCount, AllcountFacts: AllFactsCount, AllcountVideo: AllVideosCount },
+            dataType: "json",
+            success: function (data) {
+                AllVideosCount = AllVideosCount + 1;
+                AllTweetsCount = AllTweetsCount + 1;
+                AllFactsCount = AllFactsCount + 1;
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[0].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[0].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[0].Text + "'<br />#ILEDTHEWAY </div> </div></div>");
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[4].ImageUrl + " class='img-responsive'></div></div><div class='text-center twit-all-content facts-content_blue'>" + data[4].Content + "</div></div></div></div>");
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[1].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[1].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[1].Text + "'<br />#ILEDTHEWAY </div> </div></div>");
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[5].ImageUrl + " class='img-responsive'></div></div><div class='text-center twit-all-content facts-content_blue'>" + data[5].Content + "</div></div></div></div>");
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[2].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[2].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[2].Text + "'<br />#ILEDTHEWAY </div> </div></div>");
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><a data-toggle='modal' data-target='#vid_model' data-id='" + data[3].VideoId + "' class='vid_anchor'><div class='video-wrap' style='background:url(" + data[3].ImageUrl + ")no-repeat; background-size:cover;'><div class='play-icon'><span aria-hidden='true' class='glyphicon glyphicon-play-circle'></span></div></div></a></div>");
+                // console.log(data);
+                $('.vid_anchor').on("click", function () {
+                    var getSrc = $(this).attr("data-id");
+                    $("#Vid1").attr("src", getSrc);
+                });
+
+               
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    });
+
+    // Getting Tweet on Click
+    var countTweet = 0;
+    $('#All_Tweets').on("click", function () {
+        $(".tab-load-more").show();
+        countVideos = 0;
+        countFacts = 0;
+        AllVideosCount = 0;
+        AllTweetsCount = 0;
+        AllFactsCount = 0;
+        $("#All").remove();
+        $("#AllFacts").remove();
+        $(".videos-show-more").remove();
+        $(".facts-show-more").remove();
+        $("#mainDiv").append("<div class='tweet-show-more'><div class='row' id='AllTweets'></div></div>");
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetTweetData", "Home")',
+            contentType: "application/json; charset=utf-8",
+            data: { Tweetcount: countTweet },
+            dataType: "json",
+            success: function (data) {
+                $(".tab-load-more").hide();
+                if (data.length >= 6) {
+                    countTweet = countTweet + 1;
+                    $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[0].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[0].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[0].Text + "'<br /> </div> </div></div>");
+                    $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[1].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[1].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[1].Text + "'<br /> </div> </div></div>");
+                    $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[2].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[2].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[2].Text + "'<br /> </div> </div></div>");
+                    $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[3].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[3].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[3].Text + "'<br /> </div> </div></div>");
+                    $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[4].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[4].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[4].Text + "'<br /> </div> </div></div>");
+                    $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[5].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[5].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[5].Text + "'<br /> </div> </div></div>");
+                    //  console.log(data);
+                }
+                else {
+                    //$("#All_Tweets").hide();
+                }
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    });
+    // For Getting More Tweets
+    $('#twitter-More').on("click", function () {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetTweetData", "Home")',
+            contentType: "application/json; charset=utf-8",
+            data: { Tweetcount: countTweet },
+            dataType: "json",
+            success: function (data) {
+                $(".load-more-img img").show();
+                if (data != "No data found") {
+                    if (data.length > 0) {
+                        $(".load-more-img img").hide();
+                        countTweet = countTweet + 1;
+                        $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[0].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[0].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[0].Text + "'<br /> </div> </div></div>");
+                        $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[1].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[1].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[1].Text + "'<br /> </div> </div></div>");
+                        $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[2].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[2].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[2].Text + "'<br /> </div> </div></div>");
+                        $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[3].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[3].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[3].Text + "'<br /> </div> </div></div>");
+                        $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[4].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[4].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[4].Text + "'<br /> </div> </div></div>");
+                        $('#AllTweets').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[5].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[5].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[5].Text + "'<br /></div> </div></div>");
+                    }
+                    else {
+                        alert('No More Records to Load');
+                        $(".load-more-img img").hide();
+                    }
+                }
+                else {
+                    alert('No More Records to Load');
+                    $(".load-more-img img").hide();
+                }
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    });
+
+    // For Getting All Facts
+    var countFacts = 0;
+    $('#All_Facts').on("click", function () {
+        $(".tab-load-more").show();
+        countTweet = 0;
+        countVideos = 0;
+        AllVideosCount = 0;
+        AllTweetsCount = 0;
+        AllFactsCount = 0;
+        $("#All").remove();
+        $("#AllFacts").remove();
+        $(".tweet-show-more").remove();
+        $(".videos-show-more").remove();
+        $("#mainDiv").append("<div class='facts-show-more'><div class='row' id='AllFacts_Data'></div></div>");
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetAllFacts", "Home")',
+            contentType: "application/json; charset=utf-8",
+            data: { Factcount: countFacts },
+            dataType: "json",
+            success: function (data) {
+                $(".tab-load-more").hide();
+                if (data != "No data found") {
+                    if (data.length < 6) {
+                        //alert('Hide More Facts');
+                        $("#fact-More").hide();
+                    }
+                    if (data.length >= 0) {
+                        countFacts = countFacts + 1;
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_tweets_lightblue'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[0].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content'>" + data[0].Content + "</div></div></div></div>");
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[1].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content_blue'>" + data[1].Content + "</div></div></div></div>");
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_tweets_lightblue'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[2].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content'>" + data[2].Content + "</div></div></div></div>");
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[3].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content_blue'>" + data[3].Content + "</div></div></div></div>");
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_tweets_lightblue'><div class='inner-div'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[4].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content'>" + data[4].Content + "</div></div></div></div>");
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[5].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content_blue'>" + data[5].Content + "</div></div></div></div>");
+                        // console.log(data);
+                    }
+                } else {
+                    alert('No More Records to Load');
+                }
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    });
+
+    // For Getting More Data for Facts
+    $('#fact-More').on("click", function () {
+        $('#loadingDiv').fadeIn(100);
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetAllFacts", "Home")',
+            contentType: "application/json; charset=utf-8",
+            data: { Factcount: countFacts },
+            dataType: "json",
+            success: function (data) {
+                $(".load-more-img img").show();
+                if (data != "No data found") {
+                    if (data.length < 6) {
+                        //alert("Hide Facts More");
+                        $('#fact-More').hide();
+                    }
+                    if (data.length > 0) {
+                        $(".load-more-img img").hide();
+                        countFacts = countFacts + 1;
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_tweets_lightblue'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[0].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content'>" + data[0].Content + "</div></div></div></div>");
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[1].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content_blue'>" + data[1].Content + "</div></div></div></div>");
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_tweets_lightblue'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[2].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content'>" + data[2].Content + "</div></div></div></div>");
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[3].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content_blue'>" + data[3].Content + "</div></div></div></div>");
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_tweets_lightblue'><div class='inner-div'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[4].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content'>" + data[4].Content + "</div></div></div></div>");
+                        $('#AllFacts_Data').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[5].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content_blue'>" + data[5].Content + "</div></div></div></div>");
+                        //  console.log(data);
+                    }
+                }
+                else {
+                    $(".load-more-img img").hide();
+                    alert('No More Records to Load');
+                    $('#fact-More').hide();
+                }
+            },
+            error: function () {
+                $(".load-more-img img").hide();
+                alert("Error");
+                $('#fact-More').hide();
+            }
+
+        });
+    });
+
+    // For Getting YouTube Videos
+    var countVideos = 0;
+    $('#All_Video').on("click", function () {
+        $(".tab-load-more").show();
+        countTweet = 0;
+        countFacts = 0;
+        AllVideosCount = 0;
+        AllTweetsCount = 0;
+        AllFactsCount = 0;
+        $("#All").remove();
+        $("#AllFacts").remove();
+        $(".tweet-show-more").remove();
+        $(".facts-show-more").remove();
+        $("#mainDiv").append("<div class='videos-show-more'><div class='row' id='AllVideos'></div></div>");
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetAllVideo", "Home")',
+            contentType: "application/json; charset=utf-8",
+            data: { Videocount: countVideos },
+            dataType: "json",
+            success: function (data) {
+                $(".tab-load-more").hide();
+                if (data != "No data found") {
+                    if (data.length < 6) {
+                        $('#video-More').hide();
+                    }
+                    if (data.length > 0) {
+                        countVideos = countVideos + 1;
+                        for (var i = 0; i < data.length; i++) {
+                            $('#AllVideos').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><a data-toggle='modal' data-target='#vid_model' data-id='" + data[i].VideoId + "' class='vid_anchor'><div class='video-wrap' style='background:url(" + data[i].ImageUrl + ")no-repeat; background-size:cover;'><div class='play-icon'><span aria-hidden='true' class='glyphicon glyphicon-play-circle'></span></div></div></a></div>");
+                        }
+                    }
+                }
+                else {
+                    alert("No More Record in the List");
+                }
+
+                $('.vid_anchor').on("click", function () {
+                    var getSrc = $(this).attr("data-id");
+                    $("#Vid1").attr("src", getSrc);
+                });
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    });
+    // For Getting More Data for Video
+    $('#video-More').on("click", function () {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetAllVideo", "Home")',
+            contentType: "application/json; charset=utf-8",
+            data: { Videocount: countVideos },
+            dataType: "json",
+            success: function (data) {
+                $(".load-more-img img").show();
+                if (data != "No data found") {
+                    if (data.length < 6) {
+                        //alert("Hide Facts More");
+                        $('#video-More').hide();
+                    }
+                    if (data.length > 0) {
+                        $(".load-more-img img").hide();
+                        countVideos = countVideos + 1;
+                        for (var i = 0; i < data.length; i++) {
+                            $('#AllVideos').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><a data-toggle='modal' data-target='#vid_model' data-id='" + data[i].VideoId + "' class='vid_anchor'><div class='video-wrap' style='background:url(" + data[i].ImageUrl + ")no-repeat; background-size:cover;'><div class='play-icon'><span aria-hidden='true' class='glyphicon glyphicon-play-circle'></span></div></div></a></div>");
+                        }
+                        $('.vid_anchor').on("click", function () {
+                            var getSrc = $(this).attr("data-id");
+                            $("#Vid1").attr("src", getSrc);
+                        });
+                    }
+                    else {
+                        //$(".tab-load-more").show();
+                        $(".load-more-img img").hide();
+                        $('#video-More').hide();
+                        alert('No More Records to Load');
+                    }
+                }
+                else {
+                    $(".load-more-img img").hide();
+                    alert('No More Records to Load');
+                    $('#video-More').hide();
+                }
+
+            },
+            error: function () {
+                $(".load-more-img img").hide();
+                $('#video-More').hide();
+                alert("Error");
+            }
+        });
+    });
+
+    // For Getting All Data
+
+    $('#All_Data').on("click", function () {
+        $(".tab-load-more").show();
+        AllVideosCount = 0;
+        AllTweetsCount = 0;
+        AllFactsCount = 0;
+        countTweet = 0;
+        countFacts = 0;
+        countVideos = 0;
+        $("#All").remove();
+        $(".tweet-show-more").remove();
+        $(".videos-show-more").remove();
+        $(".facts-show-more").remove();
+        $("#mainDiv").append("<div class='all-show-more' id='All'><div class='row' id='AllFacts'></div></div>");
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetAllData", "Home")',
+            contentType: "application/json; charset=utf-8",
+            data: { AllcountTweet: AllTweetsCount, AllcountFacts: AllFactsCount, AllcountVideo: AllVideosCount },
+            dataType: "json",
+            success: function (data) {
+                AllVideosCount = AllVideosCount + 1;
+                AllTweetsCount = AllTweetsCount + 1;
+                AllFactsCount = AllFactsCount + 1;
+                $(".tab-load-more").hide();
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[0].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[0].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[0].Text + "'<br /> </div> </div></div>");
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[4].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content_blue'>" + data[4].Content + "</div></div></div></div>");
+                //$('#AllFacts').append("<div class='col-md-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div'><span><img src=" + data[4].ImageUrl + " class='image_top '></span><div class='text-center twit-all-content facts-content_blue'>" + data[4].Content + "</div></div></div></div>");
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[1].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[1].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[1].Text + "'<br /> </div> </div></div>");
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><div class='fact-inner-img-wrap'><img src=" + data[5].ImageUrl + " /></div></div><div class='text-center twit-all-content facts-content_blue'>" + data[5].Content + "</div></div></div></div>");
+                //$('#AllFacts').append("<div class='col-md-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div'><span><img src=" + data[5].ImageUrl + " class='image_top '></span><div class='text-center twit-all-content facts-content_blue'>" + data[5].Content + "</div></div></div></div>");
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[2].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[2].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[2].Text + "'<br /></div> </div></div>");
+                $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><a data-toggle='modal' data-target='#vid_model' data-id='" + data[3].VideoId + "' class='vid_anchor'><div class='video-wrap' style='background:url(" + data[3].ImageUrl + ")no-repeat; background-size:cover;'><div class='play-icon'><span aria-hidden='true' class='glyphicon glyphicon-play-circle'></span></div></div></a></div>");
+                //  console.log(data);
+                $('.col-md-4').on("click", function () {
+                    var getSrc = $(this).find(".vid_anchor").attr("data-id");
+                    $("#Vid1").attr("src", getSrc);
+                });
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    });
+
+    //For Getting More Data for All
+    $('#all-more').on("click", function () {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GetAllData", "Home")',
+            contentType: "application/json; charset=utf-8",
+            data: { AllcountTweet: AllTweetsCount, AllcountFacts: AllFactsCount, AllcountVideo: AllVideosCount },
+            dataType: "json",
+            success: function (data) {
+                $(".load-more-img img").show();
+                setTimeout(function () {
+                    AllVideosCount = AllVideosCount + 1;
+                    AllTweetsCount = AllTweetsCount + 1;
+                    AllFactsCount = AllFactsCount + 1;
+                    $(".load-more-img img").hide();
+                    if (data[3].VideoId == undefined && data[4].BlogPostId != undefined && data[5].BlogPostId != undefined) { // T T T T F F
+                        //alert("condition 1");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[0].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[0].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[0].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><img src=" + data[4].ImageUrl + " class='image_top '></div><div class='text-center twit-all-content facts-content_blue'>" + data[4].Content + "</div></div></div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[1].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[1].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[1].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><img src=" + data[5].ImageUrl + " class='image_top '></div><div class='text-center twit-all-content facts-content_blue'>" + data[5].Content + "</div></div></div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[2].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[2].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[2].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[3].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[3].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[3].Text + "'<br /></div> </div></div>");
+                    }
+                    else if (data[4].VideoId != undefined && data[5].BlogPostId != undefined) { // T T T T V F
+                        //alert("condition 5");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[0].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[0].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[0].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><img src=" + data[5].ImageUrl + " class='image_top '></div><div class='text-center twit-all-content facts-content_blue'>" + data[5].Content + "</div></div></div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[1].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[1].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[1].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[3].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[3].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[3].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[2].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[2].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[2].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><a data-toggle='modal' data-target='#vid_model' data-id='" + data[4].VideoId + "' class='vid_anchor'><div class='video-wrap' style='background:url(" + data[4].ImageUrl + ")no-repeat; background-size:cover;'><div class='play-icon'><span aria-hidden='true' class='glyphicon glyphicon-play-circle'></span></div></div></a></div>");
+                    }
+                    else if (data[3].VideoId == undefined && data[4].BlogPostId == undefined && data[5].BlogPostId != undefined) { // T T T T T F
+                        //alert("condition 2");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[0].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[0].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[0].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[4].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[4].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[4].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[1].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[1].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[1].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><img src=" + data[5].ImageUrl + " class='image_top '></div><div class='text-center twit-all-content facts-content_blue'>" + data[5].Content + "</div></div></div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[2].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[2].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[2].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[3].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[3].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[3].Text + "'<br /></div> </div></div>");
+                    }
+                    else if (data[4].BlogPostId == undefined && data[5].VideoId != undefined) { // T T T T T V
+                        //alert("condition 3");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[0].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[0].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[0].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[4].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[4].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[4].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[1].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[1].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[1].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[3].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[3].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[3].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[2].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[2].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[2].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><a data-toggle='modal' data-target='#vid_model' data-id='" + data[5].VideoId + "' class='vid_anchor'><div class='video-wrap' style='background:url(" + data[5].ImageUrl + ")no-repeat; background-size:cover;'><div class='play-icon'><span aria-hidden='true' class='glyphicon glyphicon-play-circle'></span></div></div></a></div>");
+                    }
+                    else if (data[5].VideoId == undefined && data[4].BlogPostId == undefined && data[5].BlogPostId == undefined) {// T T T T T T
+                        //alert("condition 4");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[0].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[0].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[0].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[4].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[4].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[4].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[1].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[1].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[1].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[3].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[3].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[3].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[2].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[2].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[2].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_darkblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[3].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[3].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[3].Text + "'<br /></div> </div></div>");
+                    }
+                    else { //  T T T V F F
+                        //alert("condition  Default");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[0].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[0].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[0].Text + "'<br /></div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><img src=" + data[4].ImageUrl + " class='image_top '></div><div class='text-center twit-all-content facts-content_blue'>" + data[4].Content + "</div></div></div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[1].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[1].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[1].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center facts-data-box bg_facts_grey'><div class='inner-div fact-img-wrap'><div class='facts-img'><img src=" + data[5].ImageUrl + " class='image_top '></div><div class='text-center twit-all-content facts-content_blue'>" + data[5].Content + "</div></div></div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><div class='text-center data-box bg_tweets_lightblue'> <div class='tweet-icon'><i class='fa fa-twitter'></i></div> <span class='profile-image '> <img src='" + data[2].ProfileImageUrl + "'> </span> <div class='text-center profile-name'>&#64;" + data[2].ScreenName + "</div> <div class='text-center twit-all-content profile-comment'> '" + data[2].Text + "'<br /> </div> </div></div>");
+                        $('#AllFacts').append("<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'><a data-toggle='modal' data-target='#vid_model' data-id='" + data[3].VideoId + "' class='vid_anchor'><div class='video-wrap' style='background:url(" + data[3].ImageUrl + ")no-repeat; background-size:cover;'><div class='play-icon'><span aria-hidden='true' class='glyphicon glyphicon-play-circle'></span></div></div></a></div>");
+                    }
+                    console.log(data);
+                    $('.col-md-4').on("click", function () {
+                        var getSrc = $(this).find(".vid_anchor").attr("data-id");
+                        $("#Vid1").attr("src", getSrc);
+                    });
+                }, 1000);
+            },
+            error: function () {
+                alert("Error");
+            }
+        });
+    });
+</script>
+

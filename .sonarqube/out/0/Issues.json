@@ -1,0 +1,2713 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.3.0.0",
+        "fileVersion": "4.3.0-3.22423.10 (b35bb0ba)",
+        "semanticVersion": "4.3.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "CS0162",
+          "level": "warning",
+          "message": "Unreachable code detected",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 209,
+                  "startColumn": 13,
+                  "endLine": 209,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS0162",
+          "level": "warning",
+          "message": "Unreachable code detected",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 858,
+                  "startColumn": 13,
+                  "endLine": 858,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/App_Start/BundleConfig.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 13,
+                  "endLine": 12,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 231,
+                  "startColumn": 21,
+                  "endLine": 231,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 234,
+                  "startColumn": 21,
+                  "endLine": 234,
+                  "endColumn": 86
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 259,
+                  "startColumn": 25,
+                  "endLine": 259,
+                  "endColumn": 70
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 287,
+                  "startColumn": 17,
+                  "endLine": 287,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 437,
+                  "startColumn": 17,
+                  "endLine": 437,
+                  "endColumn": 104
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 439,
+                  "startColumn": 17,
+                  "endLine": 439,
+                  "endColumn": 118
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 528,
+                  "startColumn": 29,
+                  "endLine": 528,
+                  "endColumn": 153
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 647,
+                  "startColumn": 21,
+                  "endLine": 647,
+                  "endColumn": 87
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1067,
+                  "startColumn": 17,
+                  "endLine": 1067,
+                  "endColumn": 81
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1101,
+                  "startColumn": 25,
+                  "endLine": 1101,
+                  "endColumn": 171
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1122,
+                  "startColumn": 17,
+                  "endLine": 1122,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/DataController.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 17,
+                  "endLine": 32,
+                  "endColumn": 104
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/DataController.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 17,
+                  "endLine": 35,
+                  "endColumn": 118
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/DataController.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 17,
+                  "endLine": 40,
+                  "endColumn": 55
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 13,
+                  "endLine": 26,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 21,
+                  "endLine": 57,
+                  "endColumn": 94
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 203,
+                  "startColumn": 17,
+                  "endLine": 203,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Global.asax.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 11,
+                  "endLine": 18,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/HelperClass/Helper.cs",
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 13,
+                  "endLine": 55,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1118",
+          "level": "warning",
+          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/App_Start/RouteConfig.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 18,
+                  "endLine": 10,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1118",
+          "level": "warning",
+          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/App_Start/FilterConfig.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1118",
+          "level": "warning",
+          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/App_Start/BundleConfig.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 18,
+                  "endLine": 6,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4144",
+          "level": "warning",
+          "message": "Update this method so that its implementation is not identical to 'ResetPasswordForUser'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 625,
+                  "startColumn": 29,
+                  "endLine": 625,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 384,
+                  "startColumn": 29,
+                  "endLine": 384,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4144",
+          "level": "warning",
+          "message": "Update this method so that its implementation is not identical to 'ResetPasswordForUser'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1056,
+                  "startColumn": 29,
+                  "endLine": 1056,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 384,
+                  "startColumn": 29,
+                  "endLine": 384,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 30,
+                  "endLine": 28,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 30,
+                  "endLine": 29,
+                  "endColumn": 99
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 30,
+                  "endLine": 30,
+                  "endColumn": 96
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2223",
+          "level": "warning",
+          "message": "Change the visibility of 'ConsumerKey' or make it 'const' or 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 30,
+                  "endLine": 28,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2223",
+          "level": "warning",
+          "message": "Change the visibility of 'ConsumerSecret' or make it 'const' or 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 30,
+                  "endLine": 29,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2223",
+          "level": "warning",
+          "message": "Change the visibility of 'AccessToken' or make it 'const' or 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 30,
+                  "endLine": 30,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 30,
+                  "endLine": 31,
+                  "endColumn": 97
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2223",
+          "level": "warning",
+          "message": "Change the visibility of 'AccessTokenSecret' or make it 'const' or 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 30,
+                  "endLine": 31,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4790",
+          "level": "warning",
+          "message": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/HelperClass/Helper.cs",
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 39,
+                  "endLine": 53,
+                  "endColumn": 67
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4790",
+          "level": "warning",
+          "message": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/HelperClass/Helper.cs",
+                "region": {
+                  "startLine": 65,
+                  "startColumn": 19,
+                  "endLine": 65,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1854",
+          "level": "warning",
+          "message": "Remove this useless assignment to local variable 'encData_byte'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/HelperClass/Helper.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 37,
+                  "endLine": 14,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/HelperClass/Helper.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 74
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/HelperClass/Helper.cs",
+                "region": {
+                  "startLine": 41,
+                  "startColumn": 23,
+                  "endLine": 41,
+                  "endColumn": 74
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 27,
+                  "endLine": 30,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 61,
+                  "startColumn": 82,
+                  "endLine": 61,
+                  "endColumn": 84
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 77,
+                  "endLine": 64,
+                  "endColumn": 79
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 21,
+                  "endLine": 66,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 46,
+                  "endLine": 66,
+                  "endColumn": 48
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 68,
+                  "startColumn": 91,
+                  "endLine": 68,
+                  "endColumn": 93
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 84,
+                  "endLine": 69,
+                  "endColumn": 86
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 70,
+                  "startColumn": 86,
+                  "endLine": 70,
+                  "endColumn": 88
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 21,
+                  "endLine": 75,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 50,
+                  "endLine": 75,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 77,
+                  "startColumn": 84,
+                  "endLine": 77,
+                  "endColumn": 86
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 78,
+                  "startColumn": 86,
+                  "endLine": 78,
+                  "endColumn": 88
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 21,
+                  "endLine": 83,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 51,
+                  "endLine": 83,
+                  "endColumn": 53
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 85,
+                  "startColumn": 84,
+                  "endLine": 85,
+                  "endColumn": 86
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 86,
+                  "endLine": 86,
+                  "endColumn": 88
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 91,
+                  "startColumn": 21,
+                  "endLine": 91,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 91,
+                  "startColumn": 50,
+                  "endLine": 91,
+                  "endColumn": 52
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 93,
+                  "startColumn": 86,
+                  "endLine": 93,
+                  "endColumn": 88
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 98,
+                  "startColumn": 21,
+                  "endLine": 98,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 98,
+                  "startColumn": 51,
+                  "endLine": 98,
+                  "endColumn": 53
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 100,
+                  "startColumn": 84,
+                  "endLine": 100,
+                  "endColumn": 86
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 101,
+                  "startColumn": 91,
+                  "endLine": 101,
+                  "endColumn": 93
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 86,
+                  "endLine": 102,
+                  "endColumn": 88
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 107,
+                  "startColumn": 21,
+                  "endLine": 107,
+                  "endColumn": 25
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 109,
+                  "startColumn": 91,
+                  "endLine": 109,
+                  "endColumn": 93
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 110,
+                  "startColumn": 86,
+                  "endLine": 110,
+                  "endColumn": 88
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 116,
+                  "startColumn": 13,
+                  "endLine": 116,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+1",
+              "10": "+1",
+              "11": "+1",
+              "12": "+1",
+              "13": "+1",
+              "14": "+1",
+              "15": "+1",
+              "16": "+1",
+              "17": "+1",
+              "18": "+1",
+              "19": "+1",
+              "2": "+1",
+              "20": "+1",
+              "21": "+1",
+              "22": "+1",
+              "23": "+1",
+              "24": "+1",
+              "25": "+1",
+              "26": "+1",
+              "3": "+1",
+              "4": "+1",
+              "5": "+1",
+              "6": "+1",
+              "7": "+1",
+              "8": "+1",
+              "9": "+1"
+            }
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 49,
+                  "endLine": 39,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 48,
+                  "endLine": 47,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 48,
+                  "endLine": 54,
+                  "endColumn": 53
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 131,
+                  "startColumn": 38,
+                  "endLine": 131,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 153,
+                  "startColumn": 34,
+                  "endLine": 153,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 175,
+                  "startColumn": 34,
+                  "endLine": 175,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1656",
+          "level": "warning",
+          "message": "Remove or correct this useless self-assignment.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 156,
+                  "startColumn": 17,
+                  "endLine": 156,
+                  "endColumn": 52
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2245",
+          "level": "warning",
+          "message": "Make sure that using this pseudorandom number generator is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 176,
+                  "startColumn": 27,
+                  "endLine": 176,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 267,
+                  "startColumn": 130,
+                  "endLine": 267,
+                  "endColumn": 137
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 252,
+                  "startColumn": 27,
+                  "endLine": 252,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 258,
+                  "startColumn": 17,
+                  "endLine": 258,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 264,
+                  "startColumn": 21,
+                  "endLine": 264,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 264,
+                  "startColumn": 56,
+                  "endLine": 264,
+                  "endColumn": 58
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 267,
+                  "startColumn": 115,
+                  "endLine": 267,
+                  "endColumn": 117
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 268,
+                  "startColumn": 25,
+                  "endLine": 268,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 275,
+                  "startColumn": 25,
+                  "endLine": 275,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 284,
+                  "startColumn": 25,
+                  "endLine": 284,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 287,
+                  "startColumn": 29,
+                  "endLine": 287,
+                  "endColumn": 31
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 307,
+                  "startColumn": 25,
+                  "endLine": 307,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 314,
+                  "startColumn": 13,
+                  "endLine": 314,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+2 (incl 1 for nesting)",
+              "2": "+1",
+              "3": "+1",
+              "4": "+3 (incl 2 for nesting)",
+              "5": "+3 (incl 2 for nesting)",
+              "6": "+3 (incl 2 for nesting)",
+              "7": "+4 (incl 3 for nesting)",
+              "8": "+3 (incl 2 for nesting)",
+              "9": "+1"
+            }
+          }
+        },
+        {
+          "ruleId": "S3330",
+          "level": "warning",
+          "message": "Make sure creating this cookie without the \"HttpOnly\" flag is safe.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 273,
+                  "startColumn": 38,
+                  "endLine": 273,
+                  "endColumn": 114
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2092",
+          "level": "warning",
+          "message": "Make sure creating this cookie without setting the 'Secure' property is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 273,
+                  "startColumn": 38,
+                  "endLine": 273,
+                  "endColumn": 114
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Controllers/HomeController.cs",
+                "region": {
+                  "startLine": 288,
+                  "startColumn": 29,
+                  "endLine": 290,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2068",
+          "level": "warning",
+          "message": "Please review this hard-coded password.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 242,
+                  "startColumn": 39,
+                  "endLine": 242,
+                  "endColumn": 103
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'smtp'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 237,
+                  "startColumn": 25,
+                  "endLine": 237,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1905",
+          "level": "warning",
+          "message": "Remove this unnecessary cast to 'TwitterData'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 476,
+                  "startColumn": 48,
+                  "endLine": 476,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 556,
+                  "startColumn": 29,
+                  "endLine": 556,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 558,
+                  "startColumn": 13,
+                  "endLine": 558,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 559,
+                  "startColumn": 13,
+                  "endLine": 559,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 559,
+                  "startColumn": 35,
+                  "endLine": 559,
+                  "endColumn": 37
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 563,
+                  "startColumn": 17,
+                  "endLine": 563,
+                  "endColumn": 19
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 564,
+                  "startColumn": 21,
+                  "endLine": 564,
+                  "endColumn": 28
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 567,
+                  "startColumn": 25,
+                  "endLine": 567,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 570,
+                  "startColumn": 25,
+                  "endLine": 570,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 17,
+                  "endLine": 578,
+                  "endColumn": 24
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 581,
+                  "startColumn": 21,
+                  "endLine": 581,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 584,
+                  "startColumn": 21,
+                  "endLine": 584,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 592,
+                  "startColumn": 13,
+                  "endLine": 592,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+1",
+              "10": "+1",
+              "2": "+1",
+              "3": "+1",
+              "4": "+2 (incl 1 for nesting)",
+              "5": "+3 (incl 2 for nesting)",
+              "6": "+3 (incl 2 for nesting)",
+              "7": "+1",
+              "8": "+2 (incl 1 for nesting)",
+              "9": "+2 (incl 1 for nesting)"
+            }
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 571,
+                  "startColumn": 25,
+                  "endLine": 573,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 585,
+                  "startColumn": 21,
+                  "endLine": 587,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1905",
+          "level": "warning",
+          "message": "Remove this unnecessary cast to 'BlogPost'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 612,
+                  "startColumn": 45,
+                  "endLine": 612,
+                  "endColumn": 56
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3776",
+          "level": "warning",
+          "message": "Refactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 737,
+                  "startColumn": 29,
+                  "endLine": 737,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 739,
+                  "startColumn": 13,
+                  "endLine": 739,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 740,
+                  "startColumn": 13,
+                  "endLine": 740,
+                  "endColumn": 15
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 740,
+                  "startColumn": 34,
+                  "endLine": 740,
+                  "endColumn": 36
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 745,
+                  "startColumn": 21,
+                  "endLine": 745,
+                  "endColumn": 23
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 746,
+                  "startColumn": 25,
+                  "endLine": 746,
+                  "endColumn": 32
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 749,
+                  "startColumn": 29,
+                  "endLine": 749,
+                  "endColumn": 31
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 752,
+                  "startColumn": 29,
+                  "endLine": 752,
+                  "endColumn": 31
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 760,
+                  "startColumn": 21,
+                  "endLine": 760,
+                  "endColumn": 28
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 763,
+                  "startColumn": 25,
+                  "endLine": 763,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 766,
+                  "startColumn": 25,
+                  "endLine": 766,
+                  "endColumn": 27
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 774,
+                  "startColumn": 17,
+                  "endLine": 774,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "+1",
+              "1": "+1",
+              "10": "+2 (incl 1 for nesting)",
+              "2": "+1",
+              "3": "+2 (incl 1 for nesting)",
+              "4": "+3 (incl 2 for nesting)",
+              "5": "+4 (incl 3 for nesting)",
+              "6": "+4 (incl 3 for nesting)",
+              "7": "+2 (incl 1 for nesting)",
+              "8": "+3 (incl 2 for nesting)",
+              "9": "+3 (incl 2 for nesting)"
+            }
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 753,
+                  "startColumn": 29,
+                  "endLine": 755,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 767,
+                  "startColumn": 25,
+                  "endLine": 769,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 845,
+                  "startColumn": 25,
+                  "endLine": 847,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 875,
+                  "startColumn": 29,
+                  "endLine": 877,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 952,
+                  "startColumn": 25,
+                  "endLine": 954,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 964,
+                  "startColumn": 21,
+                  "endLine": 966,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1007,
+                  "startColumn": 29,
+                  "endLine": 1009,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S108",
+          "level": "warning",
+          "message": "Either remove or fill this block of code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1039,
+                  "startColumn": 29,
+                  "endLine": 1041,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1125",
+          "level": "warning",
+          "message": "Remove the unnecessary Boolean literal(s).",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1097,
+                  "startColumn": 165,
+                  "endLine": 1097,
+                  "endColumn": 172
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1066",
+          "level": "warning",
+          "message": "Merge this if statement with the enclosing one.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1179,
+                  "startColumn": 17,
+                  "endLine": 1179,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1177,
+                  "startColumn": 13,
+                  "endLine": 1177,
+                  "endColumn": 15
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1066",
+          "level": "warning",
+          "message": "Merge this if statement with the enclosing one.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1201,
+                  "startColumn": 17,
+                  "endLine": 1201,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1199,
+                  "startColumn": 13,
+                  "endLine": 1199,
+                  "endColumn": 15
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1066",
+          "level": "warning",
+          "message": "Merge this if statement with the enclosing one.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1223,
+                  "startColumn": 17,
+                  "endLine": 1223,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/iLeadTheWayProject/Areas/Admin/Controllers/AdminController.cs",
+                "region": {
+                  "startLine": 1221,
+                  "startColumn": 13,
+                  "endLine": 1221,
+                  "endColumn": 15
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CS0162": {
+          "id": "CS0162",
+          "shortDescription": "Unreachable code detected",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0162)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S1066": {
+          "id": "S1066",
+          "shortDescription": "Collapsible \"if\" statements should be merged",
+          "fullDescription": "Merging collapsible if statements increases the code's readability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1066",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S108": {
+          "id": "S108",
+          "shortDescription": "Nested blocks of code should not be left empty",
+          "fullDescription": "Most of the time a block of code is empty when a piece of code is really missing. So such empty block must be either filled or removed.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-108",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S1104": {
+          "id": "S1104",
+          "shortDescription": "Fields should not have public accessibility",
+          "fullDescription": "Public fields in public classes do not respect the encapsulation principle and has three main disadvantages:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1104",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
+        "S1118": {
+          "id": "S1118",
+          "shortDescription": "Utility classes should not have public constructors",
+          "fullDescription": "Utility classes, which are collections of static members, are not meant to be instantiated.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1118",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S112": {
+          "id": "S112",
+          "shortDescription": "General exceptions should never be thrown",
+          "fullDescription": "Throwing such general exceptions as Exception, SystemException, ApplicationException, IndexOutOfRangeException, NullReferenceException, OutOfMemoryException and ExecutionEngineException prevents calling methods from handling true, system-generated exceptions differently than application-generated errors. ",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-112",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
+        "S1125": {
+          "id": "S1125",
+          "shortDescription": "Boolean literals should not be redundant",
+          "fullDescription": "Redundant Boolean literals should be removed from expressions to improve readability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1125",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be commented out",
+          "fullDescription": "Programmers should not comment out code as it bloats programs and reduces readability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S1481": {
+          "id": "S1481",
+          "shortDescription": "Unused local variables should be removed",
+          "fullDescription": "If a local variable is declared but not used, it is dead code and should be removed. Doing so will improve maintainability because developers will not wonder what the variable is used for.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1481",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S1656": {
+          "id": "S1656",
+          "shortDescription": "Variables should not be self-assigned",
+          "fullDescription": "There is no reason to re-assign a variable to itself. Either this statement is redundant and should be removed, or the re-assignment is a mistake and some other value or variable was intended for the assignment instead.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1656",
+          "properties": {
+            "category": "Major Bug",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S1854": {
+          "id": "S1854",
+          "shortDescription": "Unused assignments should be removed",
+          "fullDescription": "A dead store happens when a local variable is assigned a value that is not read by any subsequent instruction. Calculating or retrieving a value only to then overwrite it or throw it away, could indicate a serious error in the code. Even if it's not an error, it is at best a waste of resources. Therefore all calculated values should be used.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1854",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S1905": {
+          "id": "S1905",
+          "shortDescription": "Redundant casts should not be used",
+          "fullDescription": "Unnecessary casting expressions make the code harder to read and understand.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1905",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S2068": {
+          "id": "S2068",
+          "shortDescription": "Hard-coded credentials are security-sensitive",
+          "fullDescription": "Because it is easy to extract strings from an application source code or binary, credentials should not be hard-coded. This is particularly true for applications that are distributed or that are open-source.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2068",
+          "properties": {
+            "category": "Blocker Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "NotConfigurable"
+            ]
+          }
+        },
+        "S2092": {
+          "id": "S2092",
+          "shortDescription": "Creating cookies without the \"secure\" flag is security-sensitive",
+          "fullDescription": "When a cookie is protected with the secure attribute set to true it will not be send by the browser over an unencrypted HTTP request and thus cannot be observed by an unauthorized person during a man-in-the-middle attack. ",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2092",
+          "properties": {
+            "category": "Minor Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "NotConfigurable"
+            ]
+          }
+        },
+        "S2223": {
+          "id": "S2223",
+          "shortDescription": "Non-constant static fields should not be visible",
+          "fullDescription": "A static field that is neither constant nor read-only is not thread-safe. Correctly accessing these fields from different threads needs synchronization with locks. Improper synchronization may lead to unexpected results, thus publicly visible static fields are best suited for storing non-changing data shared by many consumers. To enforce this intent, these fields should be marked readonly or converted to constants.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2223",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
+        "S2245": {
+          "id": "S2245",
+          "shortDescription": "Using pseudorandom number generators (PRNGs) is security-sensitive",
+          "fullDescription": "Using pseudorandom number generators (PRNGs) is security-sensitive. For example, it has led in the past to the following vulnerabilities:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2245",
+          "properties": {
+            "category": "Critical Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "NotConfigurable"
+            ]
+          }
+        },
+        "S2971": {
+          "id": "S2971",
+          "shortDescription": "\"IEnumerable\" LINQs should be simplified",
+          "fullDescription": "In the interests of readability, code that can be simplified should be simplified. To that end, there are several ways IEnumerable language integrated queries (LINQ) can be simplified",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2971",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S3330": {
+          "id": "S3330",
+          "shortDescription": "Creating cookies without the \"HttpOnly\" flag is security-sensitive",
+          "fullDescription": "When a cookie is configured with the HttpOnly attribute set to true, the browser guaranties that no client-side script will be able to read it. In most cases, when a cookie is created, the default value of HttpOnly is false and it's up to the developer to decide whether or not the content of the cookie can be read by the client-side script. As a majority of Cross-Site Scripting (XSS) attacks target the theft of session-cookies, the HttpOnly attribute can help to reduce their impact as it won't be possible to exploit the XSS vulnerability to steal session-cookies.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3330",
+          "properties": {
+            "category": "Minor Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "NotConfigurable"
+            ]
+          }
+        },
+        "S3776": {
+          "id": "S3776",
+          "shortDescription": "Cognitive Complexity of methods should not be too high",
+          "fullDescription": "Cognitive Complexity is a measure of how hard the control flow of a method is to understand. Methods with high Cognitive Complexity will be difficult to maintain.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3776",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": false,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S4144": {
+          "id": "S4144",
+          "shortDescription": "Methods should not have identical implementations",
+          "fullDescription": "When two methods have the same implementation, either it was a mistake - something else was intended - or the duplication was intentional, but may be confusing to maintainers. In the latter case, one implementation should invoke the other.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4144",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S4790": {
+          "id": "S4790",
+          "shortDescription": "Using weak hashing algorithms is security-sensitive",
+          "fullDescription": "Cryptographic hash algorithms such as MD2, MD4, MD5, MD6, HAVAL-128, HMAC-MD5, DSA (which uses SHA-1), RIPEMD, RIPEMD-128, RIPEMD-160, HMACRIPEMD160 and SHA-1 are no longer considered secure, because it is possible to have collisions (little computational effort is enough to find two or more different inputs that produce the same hash).",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4790",
+          "properties": {
+            "category": "Critical Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "NotConfigurable"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

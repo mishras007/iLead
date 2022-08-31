@@ -1,0 +1,90 @@
+﻿@{
+    //ViewBag.Title = "iLeadTheWay";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    @model List<EntityProject.YouTubeData>
+        }
+
+@if (ViewBag.ErrorMessage != null)
+{
+    @ViewBag.ErrorMessage
+}
+
+<div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+        @using (Html.BeginForm("AddVideo", "Admin", null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="panel-body form-horizontal ">
+                <div class="form-group">
+                    <div id="Error"></div>
+                    <label class="col-sm-4 control-label">Video ID</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="VideoId" name="VideoId" placeholder="Video Id" required="" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div id="Error"></div>
+                    <label class="col-sm-4 control-label">Title</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" id="Title" name="Title" placeholder="Title" required="" type="text">
+                    </div>
+                </div>
+                <div class="form-group last">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit" class="btn btn-success btn-lg" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="col-lg-offset-9 col-md-3">
+  
+</div>
+<div class="col-lg-12">
+    <h2>Video Checked Or Unchecked</h2>
+</div>
+<div class="col-lg-12">
+    <table id="youtubeItem" class="table table-hover table-striped table-bordered table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>You Tube Video Link</th>
+                <th>Title</th>
+                @*<th>Action</th>*@
+                <th><input type="checkbox" id="chckYou" name="CheckAll12" />  <label id="lbltext1">Check All</label> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.YouTubeDataId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VideoId, new { @Name = "ID1" })
+                        @*<iframe width="350" height="150" src="@item.VideoId" frameborder="1" allowfullscreen></iframe>*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    @*<td>
+                        @Html.ActionLink("Delete", "DeleteVideo", new { id = item.YouTubeDataId }, new { onclick = "return confirm('Are you sure you wish to delete this Record?');" })
+                    </td>*@
+                    <td>
+                        @Html.CheckBoxFor(modelItem => item.IsValid, new { @class = "chcktbl1", @Value = item.YouTubeDataId, @Name = "chcktbl1" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="col-lg-12">
+    <input type="submit" id="btnupdate1" class="btn btn-primary" value="Update" />
+</div>
+
+
+
+

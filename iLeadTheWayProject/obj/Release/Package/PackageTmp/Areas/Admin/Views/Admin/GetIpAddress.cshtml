@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "GetIpAddress";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+     @model List<EntityProject.IpDetail>
+        }
+<div class="col-lg-offset-10 col-md-2">
+    @using (Html.BeginForm("ExportDataIpAddress", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="submit" class="btn btn-primary " name="Export" id="Export" value="Export All Data" />
+    }
+</div>
+<div class="col-md-12">
+    <div class="col-lg-12">
+        <h2>IP Address Block Or Unblock</h2>
+    </div>
+    <div class="col-lg-12">
+        <table id="IpAddressTable" class="table table-hover table-striped table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Public Ip Address</th>
+                    @*<th>Private IP Address</th>*@
+                    <th>Date & Time</th>
+                    @*<th><input type="checkbox" id="chckIpAddrss" name="chckIpAddrss" />  <label id="lbltext16">Check All</label> </th>*@
+                    <th>Block or Un-Block</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IpDetailId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PublicIp)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.PrivateIp)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateTime)
+                        </td>
+
+                        <td>
+                            @Html.CheckBoxFor(modelItem => item.IsBlock, new { @class = "chcktblipAddress", @Value = item.PublicIp, @Name = "chcktblipAddress" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-2">
+        <input type="submit"  id="btnupdateip" class="btn btn-primary " value="Block Public Ip" />
+    </div>
+    <div class="col-lg-2">
+        <input type="submit" id="btnipuncheck" class="btn btn-primary" value="Un-Block Public Ip" />
+    </div>
+</div>

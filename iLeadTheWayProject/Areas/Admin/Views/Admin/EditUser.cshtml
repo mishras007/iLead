@@ -1,0 +1,94 @@
+﻿@{
+    //ViewBag.Title = "EditUser";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    @model EntityProject.AdminDetail
+}
+
+<div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong class="">Edit User Detail</strong>
+        </div>
+        @using (Html.BeginForm("EditUser", "Admin", null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            if (ViewBag.ErrorMessage != null)
+            {
+                @ViewBag.ErrorMessage
+            }
+            <div class="panel-body form-horizontal ">
+                <div class="form-group">
+                    <div id="Error"></div>
+                    <label class="col-sm-4 control-label">First Name</label>
+                    <div class="col-sm-8">
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.FirstName)
+                            @Html.ValidationMessageFor(model => model.FirstName)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Last Name</label>
+                    <div class="col-sm-8">
+                        @Html.HiddenFor(model => model.AdminDetailId)
+                        @Html.HiddenFor(model => model.Password)
+                        @Html.HiddenFor(model => model.VCode)
+                       
+                        @Html.HiddenFor(model => model.CreateDate)
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.LastName)
+                            @Html.ValidationMessageFor(model => model.LastName)
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Mobile Number</label>
+                    <div class="col-sm-8">
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.MobileNumber)
+                            @Html.ValidationMessageFor(model => model.MobileNumber)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">User Name</label>
+                    <div class="col-sm-8">
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.UserName)
+                            @Html.ValidationMessageFor(model => model.UserName)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Email Id</label>
+                    <div class="col-sm-8">
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.EmailId)
+                            @Html.ValidationMessageFor(model => model.EmailId)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Gender</label>
+                    <div class="col-sm-8">
+                        <div class="editor-field">
+                            @Html.RadioButtonFor(model => model.Gender, "Male", new { @checked = true }) <label>Male</label>
+
+                            @Html.RadioButtonFor(model => model.Gender, "Female") <label>Female</label>
+                            @Html.ValidationMessageFor(model => model.Gender)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group last">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit" class="btn btn-success btn-lg" />
+                        &nbsp; &nbsp;&nbsp;
+                        @Html.ActionLink("Back To List", "Index", "Admin", null, null)
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

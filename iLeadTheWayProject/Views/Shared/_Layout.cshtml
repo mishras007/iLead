@@ -1,0 +1,298 @@
+﻿@using iLeadTheWayProject.HelperClass
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="og:description" content="Join the #ILEDTheWay Movement by pledging to switch to LED bulbs, to make India an energy efficient nation! Visit www.iledtheway.in">
+    <meta name="og:title" content="ILedTheWay - Join the movement today">
+    <meta name="og:type" content="website">
+    @*<meta name="og:image" content="http://iledtheway.in/Beta/img/iledtheway_Facts.png">*@
+    <meta name="og:image" content="http://iledtheway.in/img/iledtheway_Facts.png">
+
+    <title>ILedTheWay - Join the movement today</title>
+    <!-- Bootstrap -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Website Styling-->
+    <link href="~/css/jquery.fancybox.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-social.css" rel="stylesheet" />
+    <link href="~/css/owl.carousel.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="loader"></div>
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas hidden-lg hidden-md  hidden-sm" id="sidebar">
+            <div class="mob_menu">
+                <ul>
+                    <li><a class="active" href="@Url.Action("Home", "Home")"> HOME</a></li>
+                    @*<li><a href="@Url.Action("DelpScheme", "Home")">DELP SCHEME</a></li>*@
+                    <li><a href="@Helper.ToAbsoluteUrl("~/delp-scheme")">DELP SCHEME</a></li>
+                    <li><a href="http://delp.in/" target="_blank">DELP DASHBOARD</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--/.sidebar-offcanvas-->
+        <div class="row">
+            <div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+                <div class="mob_header">
+                    <span class="mob-logo pull-left col-xs-8">
+                        <a href="@Url.Action("Home", "Home")"> <img src="~/img/iledtheway_Facts.png" class="img-responsive "></a>
+                    </span>
+                    <span class="col-xs-4 pull-right visible-xs text-right">
+                        <button type="button" class="btn btn-xs" data-toggle="offcanvas">
+                            <img src="img/ofcanvas-btn.png" class="img-responsive off-canavas-img">
+                        </button>
+                    </span>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="header hidden-xs">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="logo">
+                            <a href="@Url.Action("Home", "Home")"><img src="~/img/iledtheway_Facts.png" class="img-responsive"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="menu text-right">
+                            <ul>
+                                <li><a class="active" href="@Url.Action("Home", "Home")"> HOME</a></li>
+                                @*<li><a href="@Url.Action("DelpScheme", "Home")">DELP SCHEME</a></li>*@
+                                <li><a href="@Helper.ToAbsoluteUrl("~/delp-scheme")">DELP SCHEME</a></li>
+                                <li><a href="http://delp.in/" target="_blank">DELP DASHBOARD</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home_top_section">
+                <div id="main-carousel">
+                    <div class="owl-carousel">
+                        <div class="item">
+                            <div class="ban_img_relativ">
+                                <img src="~/img/home_banner1.jpg" class="img-responsive">
+                                <div class="banner_text">
+                                    have you led the way to
+                                    <span class="clearfix"></span>
+                                    a brighter and smarter india?
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="banner_bottom">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="led_info">
+                                <div class="led_info_caption">
+                                    Join the nation's movement to switch to LED bulbs! #ILEDTHEWAY
+                                    @*Join the nation's movement to switch to LED Bulbs!<div class="clearfix"></div><div class="ledtheway text-center"> #ILEDTHEWAY</div>*@
+                                </div>
+                                <div class="led_info_text">
+                                    <p>From teachers, journalists, doctors, engineers, students, businessmen, housewives to practically anyone and everyone, India is now on a move to lower its monthly electricity bills!</p>
+                                    <p>With one simple act to pledge to switch to more energy efficient LED bulbs, you too can do your bit to save money and make the entire nation more energy efficient, by helping to reduce India’s greenhouse gas emissions.</p>
+                                    <p>Take the pledge and then visit the <a class="col_fff" href=" http://delp.in/" target="_blank">DELP Dashborad</a> to discover which states & cities can avail of a special offer on 2 - 10 LED bulbs at lower than CFL rates today!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="take_the_pledge">
+                                <div class="pledge_count">
+                                    @if (ViewBag.Number != null)
+                                    {
+                                        @ViewBag.Number;
+                                    }
+                                    @if (ViewBag.Number == "")
+                                    {
+                                        <span>0</span>
+                                    }
+                                </div>
+                                <div class="pledge_text">Pledges made</div>
+                                <div class="take_the_pledge_btn text-center">
+                                    <button type="button" class="btn btn-pledge" id="pledgeSlide">take the pledge</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="congratulate">
+                </div>
+            </div>
+            <div class="grey_section">
+                <div class="arrow-down"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <a class="MobileMenubutton hidden-sm hidden-md hidden-lg" href="javascript:;" id="mobileMenu">
+                        Filter: <span id="printDrpValue"></span> <span class="downArrow"><i id="arrow-toggle" class="fa fa-angle-down"></i></span>
+                        <div class="clearfix"></div>
+                    </a>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+         
+        <div class="footer_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-5 col-sm-4 col-md-4">
+                        <div class="footer_left">
+                            <img class="img-responsive" src="~/img/footer_left_logo.png">
+                        </div>
+                    </div>
+                    <div class="col-xs-2 col-sm-4 col-md-4">
+                        <div class="footer-center-img">
+                            <img class="img-responsive bulb-img-ft" src="~/img/eesl-delp.png">
+                        </div>
+                    </div>
+                    <div class="col-xs-5 col-sm-4 col-md-4">
+                        <div class="footer_left1 footer-img1">
+                            <img class="img-responsive" src="~/img/footer_right_logo.png">
+                        </div>
+                        <div class="footer_left1 footer-img2">
+                            <img class="img-responsive" src="~/img/energy.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js" type="text/javascript"></script>
+    <script src="~/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+    <script src="~/js/bootstrap.js" type="text/javascript"></script>
+    <script src="~/js/jquery.fancybox.js" type="text/javascript"></script>
+    <script src="~/js/owl.carousel.js" type="text/javascript"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: false,
+            autoplay: false,
+            margin: 0,
+            nav: false,
+            items: 1,
+            smartSpeed: 1500,
+            dots: false,
+            responsiveClass: true,
+            navText: [
+                //"<i class='fa fa-angle-left'></i>",
+               // "<i class='fa fa-angle-right'></i>"
+            ],
+        });
+        $(function () {
+            $("#pledgeSlide").click(function () {
+                $(".congratulate").show("slide", { direction: "right" }, 600);
+            });
+            //$(".treding-tab-content").load("include/all-content.html"); //call our home Page
+            $(".load-btn").hide();
+            $("#all-more").show();
+            $(".homepg-tab").on("click", function () {
+                var getUrl = $(this).attr("data-url");
+                var getText = $(this).attr("data-text");
+                console.log("Testing " + getUrl);
+                $(".treding-tab-content").load(getUrl);
+                //$(this).addClass(".active-teding-tab");
+                $(".homepg-tab").removeClass("active");
+                $(this).addClass("active");
+
+                var getButtonId = $(this).attr("data-btn-id");
+                $(".load-btn").hide();
+                $("#" + getButtonId).show();
+                console.log("Test : " + getButtonId);
+                if ($(window).width() < 767) {
+                    $(".treding-tab").slideToggle("slow");
+                    $("#mobileMenu #printDrpValue").html(getText);
+                    if ($("#arrow-toggle").hasClass("fa-angle-down")) {
+                        $("#arrow-toggle").removeClass("fa-angle-down");
+                        $("#arrow-toggle").addClass("fa-angle-up");
+                    } else {
+                        $("#arrow-toggle").removeClass("fa-angle-up");
+                        $("#arrow-toggle").addClass("fa-angle-down");
+                    }
+                }
+            });
+            $("#mobileMenu").on('click', function () {
+                if ($(window).width() < 767) {
+                    if ($(".treding-tab").css("display") == "block") {
+                        $(".treding-tab").slideUp("slow");
+                        $("#arrow-toggle").removeClass("fa-angle-up");
+                        $("#arrow-toggle").addClass("fa-angle-down");
+                    }
+
+                    if ($(".treding-tab").css("display") == "none") {
+                        $(".treding-tab").slideDown("slow");
+                        $("#arrow-toggle").removeClass("fa-angle-down");
+                        $("#arrow-toggle").addClass("fa-angle-up");
+                    }
+                }
+            });
+            console.log("Ok");
+        });
+        //Vidhyadhar Change Pledges Taken
+        function formatNumber(number) {
+            var parts = number.toString().split(".");
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return parts.join(".");
+        }
+        $("#pledgeSlide").click(function () {
+            var getIp;
+            $.get("http://ipinfo.io", function (response) {
+                // console.log(response.ip);
+                getIp = (response.ip);
+                // alert(getIp);
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("PledgesTaken", "Home")',
+                    data: JSON.stringify({ pubIp: getIp }),
+                    dataType: "text",
+                    contentType: "application/json; charset=utf-8",
+                    processData: false,
+                    @*url: '@Url.Action("PledgesTaken", "Home")',
+                    type: "GET",*@
+                    success: function (data) {
+                        $(".congratulate").append("<div class='row'><div class='col-md-12'><div class='item'><div class='img_relativ'><div class='img_text'><div class='text-center cong-font'>Congratulations.</div><div class='clearfix'></div><span class='text-center center-block pull-none para-cont hidden-xs'>Your pledge has led the way for others to join a movement to<span class='clearfix'></span>make India energy efficient and reduce greenhouse emissions.<span class='clearfix'></span>Let your friends know. Share the movement. </span>    <span class='text-center center-block pull-none para-cont hidden-lg hidden-md hidden-sm visible-xs'>Your pledge has led the way for others to join a movement to make India energy efficient and reduce greenhouse emissions. Let your friends know. Share the movement. </span>  <div class='para-cont'><a class='btn  btn-social btn-facebook' id='fbshare' target='_blank'  href='https://www.facebook.com/sharer.php?u=http://iledtheway.in/'><i class='fa fa-facebook'></i><span class='pull-left'> On Facebook</span></a>&nbsp<a class='btn btn-social btn-twitter' target='_blank'  href='http://twitter.com/intent/tweet?text=Join the&hashtags=ILedTheWay Movement by pledging to switch to LED bulbs to make India an energy efficient nation! Visit www.iledtheway.in'><i class='fa fa-twitter' ></i> On Twitter</a></div><div class='center-block pull-none para-cont'><div class='yellow-font-no'>" + formatNumber(data) + "</div><div>Pledge taken</div></div></div></div></div></div></div>");
+                        $(".congratulate").show("slide", { direction: "right" }, 600);
+                    },
+                    error: function (eer) {
+                        if (eer) {
+                            alert("Error!!!!");
+                        }
+                    }
+                });
+            }, "jsonp");
+
+
+        });
+        $(document).ready(function () {
+            $('[data-toggle="offcanvas"]').click(function () {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+
+        $(window).load(function () {
+            console.log("Loading Start");
+            //Page loader
+            $(".loader").fadeOut("slow");
+        });
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-69363214-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

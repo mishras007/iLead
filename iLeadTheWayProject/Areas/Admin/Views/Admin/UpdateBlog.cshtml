@@ -1,0 +1,43 @@
+﻿@{
+    //ViewBag.Title = "CreateBlog";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    @model EntityProject.BlogPost
+}
+
+@using (Html.BeginForm("UpdateBlog", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BlogPost</legend>
+        @Html.HiddenFor(model => model.BlogPostId)
+        @Html.HiddenFor(model => model.PostedOn)
+        @Html.HiddenFor(model => model.ImageUrl)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Content)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Content)
+
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+        <div class="editor-label">
+            <label>Image</label>
+        </div>
+        <div class="editor-field">
+        </div>
+        <label for="file">Upload Image:</label><input type="file" name="file" id="file" />
+        <br />
+        <p>
+            <input type="submit" class="btn btn-primary btn-lg" value="Update" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" id="btnCancel" name="btnCancel" value="Cancel" onclick="location.href = '@Url.Action("ViewBlog", "Admin")' " class="btn btn-danger btn-sm" />
+        </p>
+
+        <p>
+            Posted Content : @ViewBag.HtmlContent
+        </p>
+
+    </fieldset>
+}

@@ -1,0 +1,67 @@
+﻿@using EntityProject
+@{
+    //ViewBag.Title = "GetTwitterData";
+    Layout = "~/Areas/Admin/Views/Shared/_Admin.cshtml";
+    var data = ViewData["UnApprovalData"];
+}
+
+<div class="col-lg-offset-3 col-md-9">
+    <h4>@Html.ActionLink("Pending Moderation", "GetTwitterData", "Admin", null, new { @class = "btn btn-primary" })&nbsp;&nbsp;&nbsp;&nbsp;@Html.ActionLink("Approved Tweets", "ApprovalTwitter", "Admin", null, new { @class = "btn btn-primary" })&nbsp;&nbsp;&nbsp;&nbsp; @Html.ActionLink("Rejected Tweets", "UnApprovalTwitter", "Admin", null, new { @class = "btn btn-success" })&nbsp;&nbsp;&nbsp;&nbsp; @Html.ActionLink("Fetch Tweets", "AddTwitterData", "Admin", null, new { @class = "btn btn-primary" })</h4>
+</div>
+<div class="col-md-12">
+    <div class="col-lg-12">
+        <h2>Twitter Data Checked Or Unchecked</h2>
+    </div>
+    <div class="col-lg-12">
+        <table id="TwitterTableUnApp" class="table table-hover table-striped table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Profile Image</th>
+                    <th>Screen Name</th>
+                    <th>User Name</th>
+                    <th>Text</th>
+                    <th>Date & Time</th>
+                    <th>Status</th>
+                    <th><input type="checkbox" id="chckTwitterunapp" name="chckTwitterunapp" />  <label id="lbltext1231">Check All</label> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in (List<TwitterData>)data)
+                {
+                    <tr>
+                        <td>
+                            @item.TwitterDataId
+                        </td>
+                        <td>
+                            <img src="@item.ProfileImageUrl" style="height:50px;width:50px; " class="img-circle" />
+                        </td>
+                        <td>
+                           @item.ScreenName
+                        </td>
+                        <td>
+                            @item.UserName
+                        </td>
+                        <td>
+                            @item.Text
+                        </td>
+                        <td>
+                           @item.TimeStam
+                        </td>
+                        <td>
+                            @item.IsValid
+                        </td>
+                        <td>
+                            <input type="checkbox" class="chcktblTwitteruna" name="chcktblTwitteruna" value="@item.TwitterDataId" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-12">
+        <input type="submit" id="btnApprove12" class="btn btn-primary " value="Approve" />
+    </div>
+</div>
+
+

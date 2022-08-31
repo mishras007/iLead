@@ -1,0 +1,159 @@
+﻿@{
+    Layout = null;
+    @model EntityProject.AdminDetail
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New Admin Create</title>
+    <link href="~/Areas/Admin/assets/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Areas/Admin/assets/js/bootstrap.min.js"></script>
+    <script src="~/Areas/Admin/assets/css/bootstrap.js"></script>
+    <script src="~/Areas/Admin/assets/css/bootstrap.js"></script>
+    <link href="~/Areas/Admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Areas/Admin/assets/js/jquery-1.10.2.js"></script>
+    <script src="~/Areas/Admin/assets/js/jquery-1.8.2.min.js"></script>
+    <script src="~/Areas/Admin/assets/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong class="">New User Registration Form</strong>
+            </div>
+            @using (Html.BeginForm("NewRegistration", "Admin", null, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="panel-body form-horizontal ">
+                    <div class="form-group">
+                        <div id="Error"></div>
+                        <label class="col-sm-4 control-label">First Name</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="FirstName" name="FirstName" placeholder="First Name" required="" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Last Name</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="LastName" name="LastName" placeholder="Last Name" required="" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Mobile Number</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="MobileNumber" name="MobileNumber" placeholder="Mobile Number" required="" maxlength="10" min="10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="Error"></div>
+                        <label class="col-sm-4 control-label">Email Id</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="EmailId" name="EmailId" placeholder="Email Id" required="" type="email">
+                            <span id="divEmail"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">User Name</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="UserName" name="UserName" placeholder="User Name" required="" type="text">
+                            <span id="divStatus"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="Error"></div>
+                        <label class="col-sm-4 control-label">Password</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="testPassword" name="testPassword" placeholder="Password" required="" type="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Re-Enter Password</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="Password" name="password" placeholder="Re Enter Password" required="" type="password">
+                            <span id='message'></span>
+                        </div>
+                    </div>
+                    <div class="form-group last">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <input type="submit" id="btnSubmit" name="btnSubmit" value="Submit" class="btn btn-success btn-lg" />
+                            &nbsp; &nbsp;&nbsp;
+                            @Html.ActionLink("Back To Login", "LogIn", "Admin", null, null)
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <script type="text/javascript">
+        //Check Password Match Or Not
+        $('#Password').on('keyup', function () {
+            if ($(this).val() == $('#testPassword').val()) {
+                $('#message').html('Password Match').css('color', 'green');
+            }
+            else
+                $('#message').html('Password Do Not Match').css('color', 'red');
+        });
+        var pass = $('#Password').val();
+
+        $('#testPassword').on('keyup', function () {
+            if ($(this).val() != '') {
+                if ($('#Password').val() != '') {
+                    if ($(this).val() == $('#Password').val()) {
+                        $('#message').html('Password Match').css('color', 'green');
+                    }
+                    else
+                        $('#message').html('Password Do Not Match').css('color', 'red');
+                }
+            }
+            else
+                $('#message').html('Please Do Not Blank Password Fild').css('color', 'red');
+        });
+        
+        //Check User Name On Database
+        $('#UserName').on('focusout', function () {
+            var name = $("#UserName").val(); //Value entered in the text box
+            var status = $("#divStatus"); //DIV object to display the status message
+            status.html("Checking....").css('color', 'black'); //While our Thread works, we will show some message to indicate the progress
+            if (name != "") {
+                $.post("/Admin/Admin/CheckName", { UserName: name },
+                    function (data) {
+                        if (data == 1) {
+                            status.html(name + " is alredy Exist Try Another User Name....").css('color', 'red');
+                        }
+                        else {
+                            status.html(name + " is available!!!!").css('color', 'green');
+                        }
+                    });
+            }
+            else {
+                status.html("");
+            }
+        });
+
+        // Check Email Id Database is Present or Not
+        $('#EmailId').on('focusout', function () {
+            var emailId = $("#EmailId").val(); //Value entered in the text box
+            var divEmail = $("#divEmail"); //DIV object to display the status message
+            if (emailId != "") {
+                // divEmail.html("Checking....").css('color', 'black'); //While our Thread works, we will show some message to indicate the progress
+                //jQuery AJAX Post request
+                $.post("/Admin/Admin/CheckEmail", { EmailId: emailId },
+                    function (data) {
+                        if (data == 1) {
+                            divEmail.html(name + "Sorry You Have Register Alrady.....").css('color', 'red');
+                        }
+                        else {
+                            divEmail.html("");
+                        }
+                    });
+            }
+            else {
+                divEmail.html("");
+            }
+        });
+    </script>
+</body>
+</html>

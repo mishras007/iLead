@@ -1,0 +1,222 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "4.3.0.0",
+        "fileVersion": "4.3.0-3.22423.10 (b35bb0ba)",
+        "semanticVersion": "4.3.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "CS0436",
+          "level": "warning",
+          "message": "The type 'AdminDetail' in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\AdminDetail.cs' conflicts with the imported type 'AdminDetail' in 'EntityProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Using the type defined in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\AdminDetail.cs'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/EntityProject/Context/iLeadTheWay.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 21,
+                  "endLine": 6,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS0436",
+          "level": "warning",
+          "message": "The type 'YouTubeData' in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\YouTubeData.cs' conflicts with the imported type 'YouTubeData' in 'EntityProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Using the type defined in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\YouTubeData.cs'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/EntityProject/Context/iLeadTheWay.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 21,
+                  "endLine": 7,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS0436",
+          "level": "warning",
+          "message": "The type 'TwitterData' in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\TwitterData.cs' conflicts with the imported type 'TwitterData' in 'EntityProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Using the type defined in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\TwitterData.cs'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/EntityProject/Context/iLeadTheWay.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 21,
+                  "endLine": 8,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS0436",
+          "level": "warning",
+          "message": "The type 'BlogPost' in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\BlogPost.cs' conflicts with the imported type 'BlogPost' in 'EntityProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Using the type defined in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\BlogPost.cs'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/EntityProject/Context/iLeadTheWay.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 21,
+                  "endLine": 9,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS0436",
+          "level": "warning",
+          "message": "The type 'City' in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\City.cs' conflicts with the imported type 'City' in 'EntityProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Using the type defined in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\City.cs'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/EntityProject/Context/iLeadTheWay.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 21,
+                  "endLine": 10,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS0436",
+          "level": "warning",
+          "message": "The type 'State' in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\State.cs' conflicts with the imported type 'State' in 'EntityProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Using the type defined in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\State.cs'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/EntityProject/Context/iLeadTheWay.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 21,
+                  "endLine": 11,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS0436",
+          "level": "warning",
+          "message": "The type 'RegistrationUser' in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\RegistrationUser.cs' conflicts with the imported type 'RegistrationUser' in 'EntityProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Using the type defined in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\RegistrationUser.cs'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/EntityProject/Context/iLeadTheWay.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 21,
+                  "endLine": 12,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS0436",
+          "level": "warning",
+          "message": "The type 'PledgesTaken' in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\PledgesTaken.cs' conflicts with the imported type 'PledgesTaken' in 'EntityProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Using the type defined in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\PledgesTaken.cs'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/EntityProject/Context/iLeadTheWay.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 21,
+                  "endLine": 13,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        },
+        {
+          "ruleId": "CS0436",
+          "level": "warning",
+          "message": "The type 'IpDetail' in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\IPDetail.cs' conflicts with the imported type 'IpDetail' in 'EntityProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Using the type defined in 'F:\\Pendrive Data\\iLeadTheWayJson\\EntityProject\\IPDetail.cs'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///F:/Pendrive%20Data/iLeadTheWayJson/EntityProject/Context/iLeadTheWay.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 21,
+                  "endLine": 14,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 2
+          }
+        }
+      ],
+      "rules": {
+        "CS0436": {
+          "id": "CS0436",
+          "shortDescription": "Type conflicts with imported type",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0436)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
